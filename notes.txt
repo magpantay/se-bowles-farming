@@ -6,7 +6,10 @@ AgWorld Login:
 username: mwallace3@ucmerced.edu
 password: Wallace2019
 
+If the public sees these passwords, by then these passwords have been changed. ;)
 
+Our project is hosted on:
+https://kyran.xyz/agworld-test/index.html
 
 EmbeddedLink: <iframe width="100%" height="520" frameborder="0" src="https://aleckwiat.carto.com/builder/bc672a99-e8d7-4111-b03e-dfacd22e69e9/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
 
@@ -18,4 +21,7 @@ URL: https://aleckwiat.carto.com/builder/bc672a99-e8d7-4111-b03e-dfacd22e69e9/em
 The below link is to solve the matter reparding the Carto-Map updating
   (The scenario where data is being updated from AgWorld API, changes are being made, and the map should be updated for the end user accrodingly)
 https://carto.com/help/building-maps/refresh-map/
+Firefox force reload:
   https://developer.mozilla.org/en-US/docs/Web/API/Location/reload
+Chrome force reload:
+IE force reload:
