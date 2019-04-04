@@ -1,4 +1,6 @@
-
+Carto Login:
+username: aleckwiat
+password: BowlesFarming2019
 
 The below link is to solve the matter reparding the Carto-Map updating
   (The scenario where data is being updated from AgWorld API, changes are being made, and the map should be updated for the end user accrodingly)
