@@ -10,3 +10,7 @@ Agworld is a modern farm management program that allows operations to plan and t
 
 Objectives:
 A step toward making agworld data presentable is to have a dashboard showing upcoming and completed jobs while highlighting overdue jobs. This data would be presented on TVs or as web platforms for users around the farm to get updated about what is going on and what has happened. This communication tool will help get everyone on the same page about what operations has done and what's coming up.
+
+# Website:
+
+https://www.kyran.xyz/agworld-test/
