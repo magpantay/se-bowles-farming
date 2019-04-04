@@ -20,5 +20,5 @@ The below link is to solve the matter reparding the Carto-Map updating
 https://carto.com/help/building-maps/refresh-map/
 
 Auto-refresh js code:
-javascript:parent.window.location.reload(true)
+javascript:parent.window.location.reload(true);
 
