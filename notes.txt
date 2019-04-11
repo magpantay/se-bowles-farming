@@ -22,3 +22,11 @@ https://carto.com/help/building-maps/refresh-map/
 Auto-refresh js code:
 javascript:parent.window.location.reload(true);
 
+Google Sheets API
+
+Bowles 1 on Alec's Google drive
+ 
+ Client ID:  132658582549-lk1bfalinu297o01aglvi7tbdk9hdsli.apps.googleusercontent.com 
+ 
+ Client Secret: BcesO0kTX0JxFSGOjFRECgPE 
+
