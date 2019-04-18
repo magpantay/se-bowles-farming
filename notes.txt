@@ -31,3 +31,6 @@ Bowles 1 on Alec's Google drive
  Client Secret: BcesO0kTX0JxFSGOjFRECgPE 
 
 https://carto.com/help/working-with-data/sync-real-time-data/ (for connecting csv to carto)
+
+Direct access CSV file:
+https://kyran.xyz/agworld-test/bowles_farming_table.csv
