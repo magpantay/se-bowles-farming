@@ -3,69 +3,33 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="refresh" content="30"> <!-- Refresh every 30 seconds, no JS needed! -->
-     
+    <!--<meta http-equiv="refresh" content="600"> <!-- Refresh every 30 seconds, no JS needed! -->
+
     <!-- Cheeky little nosy thing, aren't ya? -->
-    
+    <link href='index.css' rel="stylesheet" type="text/css"</link>
+    <script type='text/javascript' src='index.js'></script>
+    <link rel="icon" type="image/x-icon" href="bowles.ico">
     <title>Bowles Farming Group 13</title>
 </head>
 
 <body>
-   <iframe width="100%" height="520" frameborder="0" src="https://aleckwiat.carto.com/builder/bc672a99-e8d7-4111-b03e-dfacd22e69e9/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen>
+   <iframe width="100%" height="520" frameborder="0" src="https://aleckwiat.carto.com/builder/2a4adb6e-ec28-4c0d-aa09-c8aaf308bdb4/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen>
    </iframe>
-    
-   <h1>Task List</h1>
+  <h1>Task List</h1>
    <p>Note: All information in this table is placeholder/dummy text.</p>
-   <table style="width:100%" border="1" align="center">
-   <tr>
-     <th>Task Name</th>
-     <th>Foreman Name</th>
-     <th>Status</th>
-     <th>Due Date</th>
-   </tr>
-   <tr>
-     <td>Water watermelons</td>
-     <td>Smith Johnson</td>
-     <td bgcolor="#00FF00">Complete</td>
-     <td>April 20, 1969</td>
-   </tr>
-   <tr>
-     <td>Till field 24</td>
-     <td>Greg Sevensen</td>
-     <td bgcolor="#FF0000">Incomplete</td>
-     <td>January 29, 2057</td>
-   </tr>
-   <tr>
-     <td>Fertilize tomato fields</td>
-     <td>Jim Sterlingson</td>
-     <td bgcolor="#FF0000">Incomplete</td>
-     <td>September 21, 2019</td>
-   </tr>
-      <tr>
-     <td>Till field 1</td>
-     <td>Bryan Barrington</td>
-     <td bgcolor="#FF0000">Incomplete</td>
-     <td>September 19, 2021</td>
-   </tr>
-      <tr>
-     <td>Fertilize cabbage fields</td>
-     <td>Abby James</td>
-     <td bgcolor="#FF0000">Incomplete</td>
-     <td>June 1, 2019</td>
-   </tr>
-      <tr>
-     <td>Water buttersquash fields</td>
-     <td>Ken Kensington</td>
-     <td bgcolor="#FF0000">Incomplete</td>
-     <td>May 5, 2019</td>
-   </tr>
-      <tr>
-     <td>Water potato fields</td>
-     <td>Fore Foremanson</td>
-     <td bgcolor="#FF0000">Incomplete</td>
-     <td>October 16, 2019</td>
-   </tr>
-  </table> 
+    <br></br>
+<p>So sorry for the lack of CSS. This isn't a final product and therefore doesn't have to be as pretty yet. :)</p>
 </body>
- 
+
+<script type = "text/javascript">
+  tableCreation("tab1"); //create table when website loads
+
+  for (var i = 0; i < 7; i++) //7 is a hardcoded value, changes based on rows to create
+  {
+    tableRowCreate("tab1", i);
+  }
+  populateTable("tab1"); //populates 7 (number is hardcoded) rows of a table with hardcoded data for now
+  addColorToTaskStatus("tab1");
+</script>
+
 </html>

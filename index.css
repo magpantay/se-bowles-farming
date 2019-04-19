@@ -1,0 +1,30 @@
+body, html
+{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background: black;
+
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+body
+{
+    color: white;
+}
+
+.iframe
+{
+  height: 520px;
+  width: 100%;
+  position: absolute;
+}
+
+.tab1
+{
+  align: center;
+  width: 100%;
+  border: 1px solid white;
+}
