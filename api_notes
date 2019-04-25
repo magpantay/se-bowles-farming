@@ -1,0 +1,30 @@
+Activities  
+    completed (bool)
+    due_at
+    expiration_date
+    activity_fields: 
+        0:
+            crops
+            farm_id
+            field_id
+            field_name
+            season_id
+
+    activity_problems:
+        0:
+            infestation
+            pest_name
+            severity
+    job_activities:
+        0:
+            activity_id
+        job_id
+        job_status
+        colour_id
+        colour_name
+
+Fields
+    id
+    attributes:
+        farm_id
+

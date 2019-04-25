@@ -16,7 +16,7 @@ body
 }
 
 
-  .tablink {
+.tablinks{
   background-color: #555;
   color: white;
   float: left;
@@ -29,7 +29,7 @@ body
 }
 
 /* Change background color of buttons on hover */
-.tablink:hover {
+.tablinks:hover {
   background-color: #777;
 }
 
@@ -41,7 +41,8 @@ body
   text-align: center;
 }
 
-#Home {background-color:red;}
+
+#Home {background-color:black;}
 #Agronomy {background-color:green;}
 #Irrigation {background-color:blue;}
 
@@ -66,4 +67,8 @@ body
   align: center;
   width: 100%;
   border: 1px solid white;
+}
+/* Show content of first tab - colouring is still not right */
+div[class*="tabcontent"]:first-of-type {
+  display: block;
 }

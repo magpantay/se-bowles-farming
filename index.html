@@ -11,7 +11,10 @@
     <link rel="icon" type="image/x-icon" href="bowles.ico">
     <title>Bowles Farming Group 13</title>
     
-    
+        <button class="tablinks active" onclick="openTab('Home', this, 'black')" id="defaultOpen">Home</button>
+        <button class="tablinks" onclick="openTab('Agronomy', this, 'green')">Agronomy</button>
+        <button class="tablinks" onclick="openTab('Irrigation', this, 'blue')">Irrigation</button>
+
        <!--here is the additon of the tabs test -->
 
         <div id="Home" class="tabcontent">
@@ -21,23 +24,22 @@
 
         <div id="Agronomy" class="tabcontent">
           <h1>Agronomy</h1>
-          <p>Here is the agronomy tab.</p> 
+          <iframe width="100%" height="520" frameborder="0" src="https://aleckwiat.carto.com/builder/ea1a9bb9-efdd-4e00-9c1f-4af5a38de98d/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen>
+          </iframe>
         </div>
 
         <div id="Irrigation" class="tabcontent">
           <h1>Irrigation</h1>
-          <p>Here is the irrigation tab.</p>
+           <iframe width="100%" height="520" frameborder="0" src="https://aleckwiat.carto.com/builder/2a4adb6e-ec28-4c0d-aa09-c8aaf308bdb4/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen>
+           </iframe>
         </div>
-        <button class="tablink" onclick="openTab('Home', this, 'red')" id="defaultOpen">Home</button>
-        <button class="tablink" onclick="openTab('Agronomy', this, 'green')">Agronomy</button>
-        <button class="tablink" onclick="openTab('Irrigation', this, 'blue')">Irrigation</button>
+
     
 </head>
 
 <body>  
-   <iframe width="100%" height="520" frameborder="0" src="https://aleckwiat.carto.com/builder/2a4adb6e-ec28-4c0d-aa09-c8aaf308bdb4/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen>
-   </iframe>
-  <h1>Task List</h1>
+
+  <br></br><h1>Task List</h1>
    <p>Note: All information in this table is placeholder/dummy text.</p>
     <br></br>
 <p>So sorry for the lack of CSS. This isn't a final product and therefore doesn't have to be as pretty yet. :)</p>
@@ -53,6 +55,7 @@
   }
   populateTable("tab1"); //populates 7 (number is hardcoded) rows of a table with hardcoded data for now
   addColorToTaskStatus("tab1");
+document.getElementsByClassName('tablinks')[0].click()
 </script>
 
 </html>
