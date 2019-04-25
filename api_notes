@@ -1,4 +1,24 @@
+f=@(t,y) y-t.^2+1;
+tspan=[0,2];
+y0=.5;
+y_ex=@(t) (t+1).^2 - exp(t)/2;
+Ns=2.^(1:20);
+close AbortController;
+X = linspace(tspan(1), tspan(2), 100);
+plot(X,y_ex(x), 'kx');
+hold on;
+leg = {};
+for i = 1:numel(Ns)
+    N = Ns(i);
+
+
 Activities  
+attributes[completed]
+attributes[completed_at]
+attributes[due_at]
+attributes[expiration_date]
+
+
     completed (bool)
     due_at
     expiration_date
