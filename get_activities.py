@@ -36,4 +36,4 @@ def main():
 		each_result = json_parser(response.text)
 	print("Page {0} of data didn't have anything. Everything has been written to '{1}'".format(counter, fileOut))
 if __name__ == "__main__":
-	main()`
+	main()
