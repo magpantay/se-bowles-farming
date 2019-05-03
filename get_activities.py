@@ -12,7 +12,7 @@ def main():
 	each_result = json_parser(response.text)
 	
 	outfile = open(fileOut, "w")
-	#outCSV = open(fileCSV, "c")
+	#outCSV = open(fileCSV, "w")
 	
 	#what the following loop does is that while the length of result['data'] > 0, then keep fetching from agworld (because we need to continuously fetch 100 [the maximum allowed at a time, also hence why page[size]=100] at a time until each_result['data']'s length is 0 (aka is []))
 	while len(each_result['data']) > 0:
