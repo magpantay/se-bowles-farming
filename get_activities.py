@@ -15,6 +15,7 @@ def main():
 	#outCSV = open(fileCSV, "w")
 
 	#what the following loop does is that while the length of result['data'] > 0, then keep fetching from agworld (because we need to continuously fetch 100 [the maximum allowed at a time, also hence why page[size]=100] at a time until each_result['data']'s length is 0 (aka is []))
+	status = "" # will hold complete/incomplete/late/etc.
 	while len(each_result['data']) > 0:
 		print ("Writing page {0} of data to '{1}', please wait...".format(counter, fileOut))
 		for i in range(len(each_result['data'])): # inside the loop, we take the current chunk of agworld data and fetch the important bits and save it to a txt file (the fileOut above)
@@ -26,7 +27,7 @@ def main():
 			outfile.write("Due At: {0}\n".format(each_result['data'][i]['attributes']['due_at'])) # outputs "None" if it doesn't exist
 			outfile.write("Completed At: {0}\n".format(each_result['data'][i]['attributes']['completed_at']))
 
-			#-------------------------------------------------------------------------------------------------------			
+			#-------------------------------------------------------------------------------------------------------
 			# the list of things that we've tried that some things in the JSON file have, but not all (as in, exists in some not in all. It's lack of existence breaks this program though)
 			#outfile.write("Activity ID [job_activities]: {0}\n".format(each_result['data'][i]['attributes']['job_activities']['activity_id']))
 			#outfile.write("Activity Type [job_activities]: {0}\n".format(each_result['data'][i]['attributes']['job_activities']['activity_type']))
@@ -38,13 +39,20 @@ def main():
 			#outfile.write ("Operator Name: {0}\n".format(each_result['data'][i]['attributes']['operator_users'][0]['name']))
 			#-------------------------------------------------------------------------------------------------------
 
+			# if the thing is none, apparently it's type NoneType (not string lol)
+			# need .__name__ because that gets the name of type alone rather than < class 'TYPE' >
+			if type(each_result['data'][i]['attributes']['due_at']).__name__ != "NoneType":
+				# compare when its due
+				print ("I did a thing!")
 
 			for j in range(len(each_result['data'][i]['attributes']['activity_fields'])): # because apparantly a single assignment can involve multiple fields/farms
 				outfile.write("Farm Name: {0}\n".format(each_result['data'][i]['attributes']['activity_fields'][j]['farm_name'])) # ex. Delta Ranch
 				outfile.write("Field Name: {0}\n".format(each_result['data'][i]['attributes']['activity_fields'][j]['field_name'])) # ex. D-06
 				outfile.write("Field ID: {0}\n".format(each_result['data'][i]['attributes']['activity_fields'][j]['field_id'])) # ex. 416057
-			outfile.write("Job Status: {0}\n".format(each_result['data'][i]['attributes']['job_status']))
+
+			outfile.write("Job Status: {0}\n".format(status))#each_result['data'][i]['attributes']['job_status']))
 			outfile.write("\n")
+
 		print ("Wrote page {0} to '{1}'".format(counter, fileOut))
 		counter = counter + 1	# to get the next 100 or so tasks
 		print("Getting page {0} of data, please wait...".format(counter))
