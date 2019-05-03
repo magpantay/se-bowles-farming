@@ -20,21 +20,22 @@ def main():
 		for i in range(len(each_result['data'])): # inside the loop, we take the current chunk of agworld data and fetch the important bits and save it to a txt file (the fileOut above)
 			#Duplicates, see which we need or if they are just the same.
 			outfile.write("Activity ID: {0}\n".format(each_result['data'][i]['id']))
-			#outfile.write("Activity ID [job_activities]: {0}\n".format(each_result['data'][i]['attributes']['job_activities']['activity_id']))
 			outfile.write("Activity Type [attributes]: {0}\n".format(each_result['data'][i]['attributes']['activity_type']))
-			#outfile.write("Activity Type [job_activities]: {0}\n".format(each_result['data'][i]['attributes']['job_activities']['activity_type']))
 
 			outfile.write("Task Name: {0}\n".format(each_result['data'][i]['attributes']['title']))
-			outfile.write("Due At: {0}\n".format(each_result['data'][i]['attributes']['due_at']))
+			outfile.write("Due At: {0}\n".format(each_result['data'][i]['attributes']['due_at'])) # outputs "None" if it doesn't exist
 			outfile.write("Completed At: {0}\n".format(each_result['data'][i]['attributes']['completed_at']))
 
+			# the list of things that we've tried that some things in the JSON file have, but not all (as in, exists in some not in all. It's lack of existence breaks this program though)
+			#outfile.write("Activity ID [job_activities]: {0}\n".format(each_result['data'][i]['attributes']['job_activities']['activity_id']))
+			#outfile.write("Activity Type [job_activities]: {0}\n".format(each_result['data'][i]['attributes']['job_activities']['activity_type']))
 			#Type of Category
 			#outfile.write("Activity ID: {0}\n".format(each_result['data'][i]['activity_category']))
 			#------Unsure on these
-			#Who ordered the Activity
+			#Who ordered the Activity (author)
 			#outfile.write("Author User Name: {0}\n".format(each_result['data'][i]['attributes']['job_activities']['author_user_name']))
+			#outfile.write ("Operator Name: {0}\n".format(each_result['data'][i]['attributes']['operator_users'][0]['name']))
 
-			#print ("Foreman: {0}\n".format(each_result['data'][i]['attributes']['operator_users'][0]['name']))
 			for j in range(len(each_result['data'][i]['attributes']['activity_fields'])): # because apparantly a single assignment can involve multiple fields/farms
 				outfile.write("Farm Name: {0}\n".format(each_result['data'][i]['attributes']['activity_fields'][j]['farm_name'])) # ex. Delta Ranch
 				outfile.write("Field Name: {0}\n".format(each_result['data'][i]['attributes']['activity_fields'][j]['field_name'])) # ex. D-06
