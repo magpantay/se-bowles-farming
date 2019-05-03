@@ -1,0 +1,28 @@
+				#we need the Unique ID of the activity, Type of Category (weed management, harvest,etc), Type of activity (workorder, recommendation), Which Field(s) it is taking place in, Who ordered the activity, When it was supposed to be completed by, When it is actually completed, Who complteded the activity
+				
+				#Unique Id of the Activity
+				outfile.write("Activity ID: {0}\n".format(each_result['data'][i]['id']))
+				
+				#Type of Category
+				outfile.write("Activity ID: {0}\n".format(each_result['data'][i]['activity_category']))
+				
+				#Type of Activity
+				outfile.write("Activity ID: {0}\n".format(each_result['data'][i]['activity_type']))
+				
+				#Unique ID of the Field
+				outfile.write("Field Number: {0}\n".format(each_result['data'][i]['attributes']['activity_fields'][j]['field_id']))
+				
+				#Unique Name of the Field
+				outfile.write("Field Number: {0}\n".format(each_result['data'][i]['attributes']['activity_fields'][j]['field_name']))
+				
+				#Who ordered the Activity
+				outfile.write("Field Number: {0}\n".format(each_result['data'][i]['attributes']['job_activities'][j]['author_user_name']))
+				
+				#When the Activity was actually started
+				outfile.write("Activity ID: {0}\n".format(each_result['data'][i]['started_at']))
+				
+				#When the Activity is due
+				outfile.write("Activity ID: {0}\n".format(each_result['data'][i]['due_at']))
+				
+				#When the Activity is actually completed
+				outfile.write("Activity ID: {0}\n".format(each_result['data'][i]['completed_at']))
