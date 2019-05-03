@@ -18,6 +18,9 @@ def main():
 		for i in range(len(each_result['data'])): # inside the loop, we take the current chunk of agworld data and fetch the important bits and save it to a txt file (the filename above)
 			outfile.write("Activity ID: {0}\n".format(each_result['data'][i]['id']))
 			outfile.write("Task Name: {0}\n".format(each_result['data'][i]['attributes']['title']))
+			outfile.write("Due At: {0}\n".format(each_result['data'][i]['attributes']['due_at']))
+			outfile.write("Completed At: {0}\n".format(each_result['data'][i]['attributes']['completed_at']))
+
 			#print ("Foreman: {0}\n".format(each_result['data'][i]['attributes']['operator_users'][0]['name']))
 			for j in range(len(each_result['data'][i]['attributes']['activity_fields'])): # because apparantly a single assignment can involve multiple fields/farms
 				outfile.write("Farm Name: {0}\n".format(each_result['data'][i]['attributes']['activity_fields'][j]['farm_name']))
