@@ -152,6 +152,14 @@ function populateTable(tableclass)
   changeTableText(tableclass, 0, 1, "Smith Johnson");
   changeTableText(tableclass, 0, 2, "Complete");
   changeTableText(tableclass, 0, 3, "April 20, 1969");
+  
+  /*
+  changeTableText(tableclass, 0, 0, field_name);
+  changeTableText(tableclass, 0, 1, activity_author_name);
+  changeTableText(tableclass, 0, 2, task_status);
+  changeTableText(tableclass, 0, 3, date_due);
+  */
+  
 
   changeTableText(tableclass, 1, 0, "Till Field 23: Wheat");
   changeTableText(tableclass, 1, 1, "Greg Sevensen");
