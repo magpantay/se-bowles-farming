@@ -24,7 +24,7 @@ def main():
 			outfile.write("Activity Type [attributes]: {0}\n".format(each_result['data'][i]['attributes']['activity_type']))
 
 			outfile.write("Task Name: {0}\n".format(each_result['data'][i]['attributes']['title']))
-			outfile.write("Due At: {0}\n".format(each_result['data'][i]['attributes']['due_at'])) # outputs "None" if it doesn't exist
+			outfile.write("Due At: {0}\n".format(each_result['data'][i]['attributes']['due_at'])) # outputs "None" (type: NoneType) if it doesn't exist, string otherwise
 			outfile.write("Completed At: {0}\n".format(each_result['data'][i]['attributes']['completed_at']))
 
 			#-------------------------------------------------------------------------------------------------------
@@ -38,12 +38,15 @@ def main():
 			#outfile.write("Author User Name: {0}\n".format(each_result['data'][i]['attributes']['job_activities']['author_user_name']))
 			#outfile.write ("Operator Name: {0}\n".format(each_result['data'][i]['attributes']['operator_users'][0]['name']))
 			#-------------------------------------------------------------------------------------------------------
-
 			# if the thing is none, apparently it's type NoneType (not string lol)
 			# need .__name__ because that gets the name of type alone rather than < class 'TYPE' >
-			if type(each_result['data'][i]['attributes']['due_at']).__name__ != "NoneType":
+			if type(each_result['data'][i]['attributes']['due_at']).__name__ != "NoneType" and type(each_result['data'][i]['attributes']['completed_at']).__name__ != "NoneType": # if due date isn't none and completed at isn't none, then completed??
 				# compare when its due
-				print ("I did a thing!")
+				print ("")
+			elif type(each_result['data'][i]['attributes']['due_at']).__name__ != "NoneType" and type(each_result['data'][i]['attributes']['completed_at']).__name__ == "NoneType": # if due isn't none but completed is then in progress
+				status = "IN-PROGRESS"
+			else: #else there isn't a due date set
+				status = "NO-DUE-DATE-SET"
 
 			for j in range(len(each_result['data'][i]['attributes']['activity_fields'])): # because apparantly a single assignment can involve multiple fields/farms
 				outfile.write("Farm Name: {0}\n".format(each_result['data'][i]['attributes']['activity_fields'][j]['farm_name'])) # ex. Delta Ranch
@@ -51,6 +54,7 @@ def main():
 				outfile.write("Field ID: {0}\n".format(each_result['data'][i]['attributes']['activity_fields'][j]['field_id'])) # ex. 416057
 
 			outfile.write("Job Status: {0}\n".format(status))#each_result['data'][i]['attributes']['job_status']))
+			# outputs the current status based on status sting
 			outfile.write("\n")
 
 		print ("Wrote page {0} to '{1}'".format(counter, fileOut))
