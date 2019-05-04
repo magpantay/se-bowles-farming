@@ -1,6 +1,15 @@
-from requests import get as web_get 	#requests.get(), for CURL requests
-from json import loads as json_parser 	#json.loads(), for parsing CURL response
+# Prereq: Python 3 (sudo apt install python3)
+#		  Python3-pip (sudo apt install python3-pip)
+# 		  Python3 requests (sudo pip3 install requests)
+#		  Python3 dateutil (sudo pip3 install python-dateutil)
+#		  Python3 datetime (sudo pip3 install datetime)
+
+from requests import get as web_get 			#requests.get(), for CURL requests || Current call syntax: web_get()
+from json import loads as json_parser 			#json.loads(), for parsing CURL response || Current call syntax: json_parser()
+from dateutil.parser import parse as date_parse # dateutil.parser.parse(), for converting str from AgWorld to date objects || Current call syntax: date_parse()
+from datetime import datetime					# for getting current system time (datetime.datetime.now()), also needed for time comparison and astimezone (tz conversion for mismatched tz timestamps) || Current call syntax: datetime.now(), obj.astimezone()
 import csv
+from dateutil import tz							# for getting timezone, to convert datetimes into different timezones (tz.gettz()) || Current call syntax: tz.gettz()
 
 def main():
 	fileOut = "things.txt"
@@ -16,6 +25,8 @@ def main():
 
 	#what the following loop does is that while the length of result['data'] > 0, then keep fetching from agworld (because we need to continuously fetch 100 [the maximum allowed at a time, also hence why page[size]=100] at a time until each_result['data']'s length is 0 (aka is []))
 	status = "" # will hold complete/incomplete/late/etc.
+	pacifictz = tz.gettz("US/Pacific")
+
 	while len(each_result['data']) > 0:
 		print ("Writing page {0} of data to '{1}', please wait...".format(counter, fileOut))
 		for i in range(len(each_result['data'])): # inside the loop, we take the current chunk of agworld data and fetch the important bits and save it to a txt file (the fileOut above)
@@ -40,13 +51,36 @@ def main():
 			#-------------------------------------------------------------------------------------------------------
 			# if the thing is none, apparently it's type NoneType (not string lol)
 			# need .__name__ because that gets the name of type alone rather than < class 'TYPE' >
+
 			if type(each_result['data'][i]['attributes']['due_at']).__name__ != "NoneType" and type(each_result['data'][i]['attributes']['completed_at']).__name__ != "NoneType": # if due date isn't none and completed at isn't none, then completed?? ||If there is a Due Date and a Complete Date, task_status = complete
 				status = "COMPLETE"
+				dtDueAt = date_parse(each_result['data'][i]['attributes']['due_at'])
+				dtCompAt = date_parse(each_result['data'][i]['attributes']['completed_at'])
+
+				dtDueAt = dtDueAt.astimezone(pacifictz)
+				dtCompAt = dtCompAt.astimezone(pacifictz)
+
+				if dtCompAt <= dtDueAt:
+					status = status + "-ON-TIME"
+				else:
+					status = status + "-LATE"
+
 				# compare time comparison to append Status
 				# if complete > due then status.append("-LATE")
 				# else status.append("-ON-TIME")
 			elif type(each_result['data'][i]['attributes']['due_at']).__name__ != "NoneType" and type(each_result['data'][i]['attributes']['completed_at']).__name__ == "NoneType": # if due isn't none but completed is then in progress || If there is a Due Date but NO Complete Date, task_status = in progress
 				status = "IN-PROGRESS"
+				dtDueAt = date_parse(each_result['data'][i]['attributes']['due_at'])
+				currentTime = datetime.now()
+
+				dtDueAt = dtDueAt.astimezone(pacifictz)
+				currentTime = currentTime.astimezone(pacifictz)
+
+				if currentTime <= dtDueAt:
+					status = status + "-GOOD"
+				else:
+					status = status + "-LATE"
+
 				# if currentTime > due then status.append("-LATE")
 				# else don't append anything
 			else: #else there isn't a due date set
