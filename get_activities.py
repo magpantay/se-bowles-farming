@@ -41,10 +41,14 @@ def main():
 			# if the thing is none, apparently it's type NoneType (not string lol)
 			# need .__name__ because that gets the name of type alone rather than < class 'TYPE' >
 			if type(each_result['data'][i]['attributes']['due_at']).__name__ != "NoneType" and type(each_result['data'][i]['attributes']['completed_at']).__name__ != "NoneType": # if due date isn't none and completed at isn't none, then completed??
-				# compare when its due
-				print ("")
+				status = "COMPLETE"
+				# compare time comparison to append Status
+				# if complete > due then status.append("-LATE")
+				# else status.append("-ON-TIME")
 			elif type(each_result['data'][i]['attributes']['due_at']).__name__ != "NoneType" and type(each_result['data'][i]['attributes']['completed_at']).__name__ == "NoneType": # if due isn't none but completed is then in progress
 				status = "IN-PROGRESS"
+				# if currentTime > due then status.append("-LATE")
+				# else don't append anything
 			else: #else there isn't a due date set
 				status = "NO-DUE-DATE-SET"
 
