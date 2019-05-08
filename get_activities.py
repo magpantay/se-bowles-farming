@@ -50,8 +50,8 @@ def main():
 				else:
 					status = status + "-LATE"
 
-				due_at = "{0}-{1}-{2} {3}:{4}:{5} US/Pac".format(dtDueAt.month, dtDueAt.day, dtDueAt.year, dtDueAt.hour, dtDueAt.minute, dtDueAt.second) # both due date and completed time as they exist, rewriting it to make it more user-readable in CSV file (and the resulting website)
-				completed_at = "{0}-{1}-{2} {3}:{4}:{5} US/Pac".format(dtCompAt.month, dtCompAt.day, dtCompAt.year, dtCompAt.hour, dtCompAt.minute, dtCompAt.second)
+				due_at = "{0:02}-{1:02}-{2:04} {3:02}:{4:02}:{5:02} US/Pac".format(dtDueAt.month, dtDueAt.day, dtDueAt.year, dtDueAt.hour, dtDueAt.minute, dtDueAt.second) # both due date and completed time as they exist, rewriting it to make it more user-readable in CSV file (and the resulting website)
+				completed_at = "{0:02}-{1:02}-{2:04} {3:02}:{4:02}:{5:02} US/Pac".format(dtCompAt.month, dtCompAt.day, dtCompAt.year, dtCompAt.hour, dtCompAt.minute, dtCompAt.second)
 
 			elif type(each_result['data'][i]['attributes']['due_at']).__name__ != "NoneType" and type(each_result['data'][i]['attributes']['completed_at']).__name__ == "NoneType": # if due isn't none but completed is then in progress || If there is a Due Date but NO Complete Date, task_status = in progress
 				dtDueAt = date_parse(each_result['data'][i]['attributes']['due_at'])
@@ -65,7 +65,7 @@ def main():
 				else:
 					status = status + "-LATE"
 
-				due_at = "{0}-{1}-{2} {3}:{4}:{5} US/Pac".format(dtDueAt.month, dtDueAt.day, dtDueAt.year, dtDueAt.hour, dtDueAt.minute, dtDueAt.second) # only due because there's no completed time
+				due_at = "{0:02}-{1:02}-{2:04} {3:02}:{4:02}:{5:02} US/Pac".format(dtDueAt.month, dtDueAt.day, dtDueAt.year, dtDueAt.hour, dtDueAt.minute, dtDueAt.second) # only due because there's no completed time
 				completed_at = "Task in progress"
 
 			else: #else there isn't a due date set
@@ -76,7 +76,7 @@ def main():
 				if type(each_result['data'][i]['attributes']['completed_at']).__name__ != "NoneType": # however, if there was data on time it was completed
 					dtCompAt = date_parse(each_result['data'][i]['attributes']['completed_at'])
 					dtCompAt = dtCompAt.astimezone(timezone)
-					completed_at = "{0}-{1}-{2} {3}:{4}:{5} US/Pac".format(dtCompAt.month, dtCompAt.day, dtCompAt.year, dtCompAt.hour, dtCompAt.minute, dtCompAt.second) # then save that completed time
+					completed_at = "{0:02}-{1:02}-{2:04} {3:02}:{4:02}:{5:02} US/Pac".format(dtCompAt.month, dtCompAt.day, dtCompAt.year, dtCompAt.hour, dtCompAt.minute, dtCompAt.second) # then save that completed time
 
 			for j in range(len(each_result['data'][i]['attributes']['activity_fields'])): # because apparantly a single assignment can involve multiple fields/farms
 				farm_name = each_result['data'][i]['attributes']['activity_fields'][j]['farm_name']
