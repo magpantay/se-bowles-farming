@@ -8,7 +8,7 @@ function tableCreation(tableclass)
   var body = document.body;
   tablee = document.createElement("table");
   tablee.style.width = "100%";
-  tablee.style.border = "1px solid white";
+  //tablee.style.border = "1px solid white";
   tablee.setAttribute('class', tableclass);
 
   var table_body = document.createElement("tbody");
@@ -72,13 +72,7 @@ function tableRowCreate(tableclass, rowid)
   tableRow.setAttribute('class', tableclass + '_row');
   tableRow.setAttribute('id', rowid);
 
-  var newCol = document.createElement('td');
-  newCol.setAttribute('id', 'row' + numRows + '-col' + 0); //id is in form: row[rowNumber]-col[colNumber]
-  newCol.align="left"
-  newCol.style.border = "1px solid white";
-  tableRow.appendChild(newCol); //append to row
-
-  for (var i = 1; i < numCols; i++) //number of td (columns)
+  for (var i = 0; i < numCols; i++) //number of td (columns)
   {
     var newCol = document.createElement('td');
     newCol.setAttribute('class', tableclass + '_non_header_col')
