@@ -13,35 +13,47 @@ function tableCreation(tableclass)
 
   var table_body = document.createElement("tbody");
 
-  var table_header_1 = document.createElement('th');
-  table_header_1.setAttribute('id', 'task_name');
-  table_header_1.innerHTML = "Task Name";
-  table_header_1.style.border = "1px solid white";
-  table_body.appendChild(table_header_1);
+  var table_header = document.createElement('th');
+  table_header.setAttribute('class', tableclass + '_header');
+  table_header.setAttribute('id', 'task_name');
+  table_header.innerHTML = "Task Name";
+  //table_header.style.border = "1px solid white";
+  table_body.appendChild(table_header);
 
-  var table_header_2 = document.createElement('th');
-  table_header_2.setAttribute('id', 'farm_name');
-  table_header_2.innerHTML = "Farm Name";
-  table_header_2.style.border = "1px solid white";
-  table_body.appendChild(table_header_2);
+  table_header = document.createElement('th');
+  table_header.setAttribute('class', tableclass + '_header');
+  table_header.setAttribute('id', 'farm_name');
+  table_header.innerHTML = "Farm Name";
+  //table_header.style.border = "1px solid white";
+  table_body.appendChild(table_header);
 
-  var table_header_3 = document.createElement('th');
-  table_header_3.setAttribute('id', 'field_name');
-  table_header_3.innerHTML = "Field Name";
-  table_header_3.style.border = "1px solid white";
-  table_body.appendChild(table_header_3);
+  table_header = document.createElement('th');
+  table_header.setAttribute('class', tableclass + '_header');
+  table_header.setAttribute('id', 'field_name');
+  table_header.innerHTML = "Field Name";
+  //table_header.style.border = "1px solid white";
+  table_body.appendChild(table_header);
 
-  var table_header_4 = document.createElement('th');
-  table_header_4.setAttribute('id', 'status');
-  table_header_4.innerHTML = "Task Status";
-  table_header_4.style.border = "1px solid white";
-  table_body.appendChild(table_header_4);
+  table_header = document.createElement('th');
+  table_header.setAttribute('class', tableclass + '_header');
+  table_header.setAttribute('id', 'status');
+  table_header.innerHTML = "Task Status";
+  //table_header.style.border = "1px solid white";
+  table_body.appendChild(table_header);
 
-  var table_header_5 = document.createElement('th');
-  table_header_5.setAttribute('id', 'due_date');
-  table_header_5.innerHTML = "Due Date";
-  table_header_5.style.border = "1px solid white";
-  table_body.appendChild(table_header_5);
+  table_header = document.createElement('th');
+  table_header.setAttribute('class', tableclass + '_header');
+  table_header.setAttribute('id', 'due_date');
+  table_header.innerHTML = "Due Date";
+  //table_header.style.border = "1px solid white";
+  table_body.appendChild(table_header);
+
+  table_header = document.createElement('th');
+  table_header.setAttribute('class', tableclass + '_header');
+  table_header.setAttribute('id', 'completed_date');
+  table_header.innerHTML = "Completed Date";
+  //table_header.style.border = "1px solid white";
+  table_body.appendChild(table_header);
 
   tablee.appendChild(table_body);
   body.appendChild(tablee);
@@ -57,6 +69,7 @@ function tableRowCreate(tableclass, rowid)
   var numRows = tableToEdit.rows.length; //becomes a part of the id of new tds (columns)
 
   var tableRow = document.createElement('tr'); // create a row
+  tableRow.setAttribute('class', tableclass + '_row');
   tableRow.setAttribute('id', rowid);
 
   var newCol = document.createElement('td');
@@ -68,8 +81,9 @@ function tableRowCreate(tableclass, rowid)
   for (var i = 1; i < numCols; i++) //number of td (columns)
   {
     var newCol = document.createElement('td');
+    newCol.setAttribute('class', tableclass + '_non_header_col')
     newCol.setAttribute('id', 'row' + numRows + '-col' + i); //id is in form: row[rowNumber]-col[colNumber]
-    newCol.style.border = "1px solid white";
+    //newCol.style.border = "1px solid white";
     tableRow.appendChild(newCol); //append to row
   }
   tableToEdit.appendChild(tableRow); //append the entire row to table itself
@@ -106,29 +120,31 @@ function addColorToTaskStatus(tableclass)
 {
   var table = document.getElementsByClassName(tableclass)[0];
   var numRows = table.rows.length;
+  var column_of_task_status = 3; //value of column where task status is (reminder that everything starts at 0)
+
   for (var i = 0; i < numRows; i++)
   {
     var current_row = table.rows[i];
-    var col = current_row.cells[3]; //this is the location of task status at the current row !!HARDCODED!!
+    var col = current_row.cells[column_of_task_status]; //this is the location of task status at the current row !!HARDCODED!!
     if (col.innerHTML == "IN-PROGRESS-NO-DUE-DATE" || col.innerHTML == "IN-PROGRESS-GOOD")
     {
-      setTableElemColor(tableclass, i, 3, "#D7DF01"); //d7df01 dark yellow if in-progress and not late (or no due date set)
+      setTableElemColor(tableclass, i, column_of_task_status, "#D7DF01"); //d7df01 dark yellow if in-progress and not late (or no due date set)
     }
     else if (col.innerHTML == "COMPLETE-LATE")
     {
-      setTableElemColor(tableclass, i, 3, "#86B404"); //change to green-yellow if complete but late
+      setTableElemColor(tableclass, i, column_of_task_status, "#86B404"); //change to green-yellow if complete but late
     }
     else if (col.innerHTML == "COMPLETE-ON-TIME" || col.innerHTML == "COMPLETE-NO-DUE-DATE")
     {
-      setTableElemColor(tableclass, i, 3, "#088A08"); //changes to dark green if complete and on time (or no due date set)
+      setTableElemColor(tableclass, i, column_of_task_status, "#088A08"); //changes to dark green if complete and on time (or no due date set)
     }
     else if (col.innerHTML == "IN-PROGRESS-LATE")
     {
-      setTableElemColor(tableclass, i, 3, "#FF0000"); //changes to red if in progress and late
+      setTableElemColor(tableclass, i, column_of_task_status, "#FF0000"); //changes to red if in progress and late
     }
     else
     {
-      setTableElemColor(tableclass, i, 3, "#848484"); //change to gray if none of the above
+      setTableElemColor(tableclass, i, column_of_task_status, "#848484"); //change to gray if none of the above
     }
   }
 }
@@ -142,6 +158,7 @@ function populateTable(tableclass, csv_rows)
     changeTableText(tableclass, i, 2, csv_rows[i + 1][6]); //field_name
     changeTableText(tableclass, i, 3, csv_rows[i + 1][8]); //job_status
     changeTableText(tableclass, i, 4, csv_rows[i + 1][3]); //due_at
+    changeTableText(tableclass, i, 5, csv_rows[i + 1][4]); //completed_at
   }
   console.log("Populated table with " + (csv_rows.length - 2) + " rows of data");
 }
