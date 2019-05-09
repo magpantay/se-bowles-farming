@@ -59,7 +59,13 @@ function tableRowCreate(tableclass, rowid)
   var tableRow = document.createElement('tr'); // create a row
   tableRow.setAttribute('id', rowid);
 
-  for (var i = 0; i < numCols; i++) //number of td (columns)
+  var newCol = document.createElement('td');
+  newCol.setAttribute('id', 'row' + numRows + '-col' + 0); //id is in form: row[rowNumber]-col[colNumber]
+  newCol.align="left"
+  newCol.style.border = "1px solid white";
+  tableRow.appendChild(newCol); //append to row
+
+  for (var i = 1; i < numCols; i++) //number of td (columns)
   {
     var newCol = document.createElement('td');
     newCol.setAttribute('id', 'row' + numRows + '-col' + i); //id is in form: row[rowNumber]-col[colNumber]

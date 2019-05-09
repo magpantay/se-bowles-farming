@@ -24,7 +24,19 @@ body
 
 .tab1
 {
-  align: center;
+  text-align: center;
+  width: 100%;
+  border: 1px solid white;
+}
+
+
+table.colright td:nth-child(2) {
+  text-align: left;
+}
+
+.tabName
+{
+  text-align: left;
   width: 100%;
   border: 1px solid white;
 }
