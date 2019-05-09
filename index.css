@@ -16,6 +16,11 @@ body
     color: black;
 }
 
+h1
+{
+	text-align: center;
+}
+
 .iframe
 {
   height: 520px;
@@ -28,11 +33,6 @@ body
   text-align: center;
   width: 100%;
   border: 1px solid white;
-}
-
-
-table.colright td:nth-child(2) {
-  text-align: left;
 }
 
 .tabName
