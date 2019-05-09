@@ -15,38 +15,6 @@ body
     color: white;
 }
 
-
-.tablinks{
-  background-color: #555;
-  color: white;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  font-size: 17px;
-  width: 25%;
-}
-
-/* Change background color of buttons on hover */
-.tablinks:hover {
-  background-color: #777;
-}
-
-/* Set default styles for tab content */
-.tabcontent {
-  color: white;
-  display: none;
-  padding: 50px;
-  text-align: center;
-}
-
-
-#Home {background-color:black;}
-#Agronomy {background-color:green;}
-#Irrigation {background-color:blue;}
-
-
 .iframe
 {
   height: 520px;
@@ -54,21 +22,9 @@ body
   position: absolute;
 }
 
-.tab {
-  overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
-}
-
-
-
 .tab1
 {
   align: center;
   width: 100%;
   border: 1px solid white;
-}
-/* Show content of first tab - colouring is still not right */
-div[class*="tabcontent"]:first-of-type {
-  display: block;
 }

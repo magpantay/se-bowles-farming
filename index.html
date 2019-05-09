@@ -1,61 +1,65 @@
 <!doctype html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--<meta http-equiv="refresh" content="600"> <!-- Refresh every 30 seconds, no JS needed! -->
+     <head>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <!--<meta http-equiv="refresh" content="600"> <!-- Refresh every 30 seconds, no JS needed! -->
 
-    <!-- Cheeky little nosy thing, aren't ya? -->
-    <link href='index.css' rel="stylesheet" type="text/css"</link>
-    <script type='text/javascript' src='index.js'></script>
-    <link rel="icon" type="image/x-icon" href="bowles.ico">
-    <title>Bowles Farming Group 13</title>
-    
-        <button class="tablinks active" onclick="openTab('Home', this, 'black')" id="defaultOpen">Home</button>
-        <button class="tablinks" onclick="openTab('Agronomy', this, 'green')">Agronomy</button>
-        <button class="tablinks" onclick="openTab('Irrigation', this, 'blue')">Irrigation</button>
-
-       <!--here is the additon of the tabs test -->
-
-        <div id="Home" class="tabcontent">
-          <h1>Home</h1>
-          <p>Welcome to BirdsEye, Home to Bowles Farming.</p>
-        </div>
-
-        <div id="Agronomy" class="tabcontent">
-          <h1>Agronomy</h1>
-          <iframe width="100%" height="520" frameborder="0" src="https://aleckwiat.carto.com/builder/ea1a9bb9-efdd-4e00-9c1f-4af5a38de98d/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen>
-          </iframe>
-        </div>
-
-        <div id="Irrigation" class="tabcontent">
-          <h1>Irrigation</h1>
-           <iframe width="100%" height="520" frameborder="0" src="https://aleckwiat.carto.com/builder/2a4adb6e-ec28-4c0d-aa09-c8aaf308bdb4/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen>
-           </iframe>
-        </div>
-
-    
+          <!-- Cheeky little nosy thing, aren't ya? -->
+     <link href="index.css" rel="stylesheet" type="text/css" </link> <script type="text/javascript" src="js/index.js"></script>
+     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+     <!-- jQuery -->
+     <script src="js/papaparse.min.js"></script>
+     <!-- PapaParse (for CSV parsing) -->
+     <link rel="icon" type="image/x-icon" href="bowles.ico">
+     <title>Bowles Farming Group 13</title>
 </head>
 
-<body>  
+<body>
+     <iframe
+          width="100%"
+          height="520"
+          frameborder="0"
+          src="https://aleckwiat.carto.com/builder/2a4adb6e-ec28-4c0d-aa09-c8aaf308bdb4/embed"
+          allowfullscreen="allowfullscreen"
+          webkitallowfullscreen="webkitallowfullscreen"
+          mozallowfullscreen="mozallowfullscreen"
+          oallowfullscreen="oallowfullscreen"
+          msallowfullscreen="msallowfullscreen"></iframe>
 
-  <br></br><h1>Task List</h1>
-   <p>Note: All information in this table is placeholder/dummy text.</p>
-    <br></br>
-<p>So sorry for the lack of CSS. This isn't a final product and therefore doesn't have to be as pretty yet. :)</p>
-    
+     <p>So sorry for the lack of CSS. This isn't a final product and therefore doesn't have to be as pretty yet. :)</p>
+     <h1>Task List</h1>
+     <script type="text/javascript">
+          var csv_rows = new Array(); //no size arg means it's a dynamically sized array
+          // this array will hold arrays from the rows of the CSV files (basically array of arrays lol)
+
+          var counter = 0; //used for location to place new row in csv_rows array
+
+          Papa.parse("things.csv", {
+               download: true,
+               step: function (row) {
+                    //console.log("Row:", row.data);
+                    csv_rows[counter] = row.data[0]; //[0] because there's other pieces of metadata that PapaParse has as well (data[0] is the array itself)
+                    counter = counter + 1; //increment counter so that for placement of next row of items
+               },
+               complete: function () { //must do the rest of the functions here because this is asynchronous (the things outside of this function will complete most likely complete before this completes)
+                    console.log("All done parsing CSV file!");
+                    console.log(
+                         "We now have a " + csv_rows.length + " x " + csv_rows[0].length + " array (yes, this includes the first row [aka column names] of the CSV and, for some odd reason, an extra blank line at the end of the CSV (dw, I've offset values to account for these))"
+                    );
+
+                    tableCreation("tab1"); //create table with class name tab1
+                    for (var i = 1; i < csv_rows.length - 1; i++) { //i=1 to account for top header of CSV file (which is at csv_rows[0]), csv_rows.length offset by 1 because of the that PapaParse seems to include an extra blank line in the end of the CSV file
+                         tableRowCreate("tab1", i);
+                    }
+
+                    populateTable("tab1", csv_rows);
+                    addColorToTaskStatus("tab1"); //adds color to task status portion of table
+               }
+          });
+     </script>
 </body>
 
-<script type = "text/javascript">
-  tableCreation("tab1"); //create table when website loads
 
-  for (var i = 0; i < 7; i++) //7 is a hardcoded value, changes based on rows to create
-  {
-    tableRowCreate("tab1", i);
-  }
-  populateTable("tab1"); //populates 7 (number is hardcoded) rows of a table with hardcoded data for now
-  addColorToTaskStatus("tab1");
-document.getElementsByClassName('tablinks')[0].click()
-</script>
 
 </html>
