@@ -14,39 +14,45 @@ function tableCreation(tableclass)
   var table_body = document.createElement("tbody");
 
   var table_header = document.createElement('th');
+  table_header.setAttribute('class', tableclass + '_header');
   table_header.setAttribute('id', 'task_name');
   table_header.innerHTML = "Task Name";
-  table_header.style.border = "1px solid white";
+  //table_header.style.border = "1px solid white";
   table_body.appendChild(table_header);
 
   table_header = document.createElement('th');
+  table_header.setAttribute('class', tableclass + '_header');
   table_header.setAttribute('id', 'farm_name');
   table_header.innerHTML = "Farm Name";
-  table_header.style.border = "1px solid white";
+  //table_header.style.border = "1px solid white";
   table_body.appendChild(table_header);
 
   table_header = document.createElement('th');
+  table_header.setAttribute('class', tableclass + '_header');
   table_header.setAttribute('id', 'field_name');
   table_header.innerHTML = "Field Name";
-  table_header.style.border = "1px solid white";
+  //table_header.style.border = "1px solid white";
   table_body.appendChild(table_header);
 
   table_header = document.createElement('th');
+  table_header.setAttribute('class', tableclass + '_header');
   table_header.setAttribute('id', 'status');
   table_header.innerHTML = "Task Status";
-  table_header.style.border = "1px solid white";
+  //table_header.style.border = "1px solid white";
   table_body.appendChild(table_header);
 
   table_header = document.createElement('th');
+  table_header.setAttribute('class', tableclass + '_header');
   table_header.setAttribute('id', 'due_date');
   table_header.innerHTML = "Due Date";
-  table_header.style.border = "1px solid white";
+  //table_header.style.border = "1px solid white";
   table_body.appendChild(table_header);
 
   table_header = document.createElement('th');
+  table_header.setAttribute('class', tableclass + '_header');
   table_header.setAttribute('id', 'completed_date');
   table_header.innerHTML = "Completed Date";
-  table_header.style.border = "1px solid white";
+  //table_header.style.border = "1px solid white";
   table_body.appendChild(table_header);
 
   tablee.appendChild(table_body);
@@ -63,13 +69,15 @@ function tableRowCreate(tableclass, rowid)
   var numRows = tableToEdit.rows.length; //becomes a part of the id of new tds (columns)
 
   var tableRow = document.createElement('tr'); // create a row
+  tableRow.setAttribute('class', tableclass + '_row');
   tableRow.setAttribute('id', rowid);
 
   for (var i = 0; i < numCols; i++) //number of td (columns)
   {
     var newCol = document.createElement('td');
+    newCol.setAttribute('class', tableclass + '_non_header_col')
     newCol.setAttribute('id', 'row' + numRows + '-col' + i); //id is in form: row[rowNumber]-col[colNumber]
-    newCol.style.border = "1px solid white";
+    //newCol.style.border = "1px solid white";
     tableRow.appendChild(newCol); //append to row
   }
   tableToEdit.appendChild(tableRow); //append the entire row to table itself
