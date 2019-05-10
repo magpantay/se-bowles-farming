@@ -147,12 +147,12 @@ function populateTable(tableclass, csv_rows)
 {
   for (var i = 0; i < (csv_rows.length - 2); i++) //offset i by 1 to account for top header of CSV file (which is at csv_rows[0]), csv_rows.length offset by 2 because of the i offset and the fact that PapaParse seems to include an extra blank line in the end of the CSV file
   {
-    changeTableText(tableclass, i, 0, csv_rows[i + 1][2]); //task_name
-    changeTableText(tableclass, i, 1, csv_rows[i + 1][5]); //farm_name
-    changeTableText(tableclass, i, 2, csv_rows[i + 1][6]); //field_name
-    changeTableText(tableclass, i, 3, csv_rows[i + 1][8]); //job_status
-    changeTableText(tableclass, i, 4, csv_rows[i + 1][3]); //due_at
-    changeTableText(tableclass, i, 5, csv_rows[i + 1][4]); //completed_at
+    changeTableText(tableclass, i, 0, csv_rows[i + 1][1]); //task_name
+    changeTableText(tableclass, i, 1, csv_rows[i + 1][4]); //farm_name
+    changeTableText(tableclass, i, 2, csv_rows[i + 1][5]); //field_name
+    changeTableText(tableclass, i, 3, csv_rows[i + 1][7]); //job_status
+    changeTableText(tableclass, i, 4, csv_rows[i + 1][2]); //due_at
+    changeTableText(tableclass, i, 5, csv_rows[i + 1][3]); //completed_at
   }
   console.log("Populated table with " + (csv_rows.length - 2) + " rows of data");
 }
