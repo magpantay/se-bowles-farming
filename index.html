@@ -51,7 +51,7 @@
 
                     tableCreation("tab1"); //create table with class name tab1
                     for (var i = 1; i < csv_rows.length - 1; i++) { //i=1 to account for top header of CSV file (which is at csv_rows[0]), csv_rows.length offset by 1 because of the that PapaParse seems to include an extra blank line in the end of the CSV file
-                         tableRowCreate("tab1", i);
+                         tableRowCreate("tab1", i-1);
                     }
 
                     populateTable("tab1", csv_rows);
