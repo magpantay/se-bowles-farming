@@ -41,3 +41,12 @@ h1
   width: 100%;
   border: 1px solid black;
 }
+
+.tab1_header
+{
+  background-color: #c2c2c2;
+}
+
+tr:nth-child(odd) {
+  background-color: #f2f2f2; /* makes zebra-striped table */
+}

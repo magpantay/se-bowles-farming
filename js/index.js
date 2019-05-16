@@ -55,6 +55,12 @@ function tableCreation(tableclass)
   //table_header.style.border = "1px solid white";
   table_body.appendChild(table_header);
 
+  table_header = document.createElement('th');
+  table_header.setAttribute('class', tableclass + '_header');
+  table_header.setAttribute('id', 'author_name');
+  table_header.innerHTML = "Author Name";
+  table_body.appendChild(table_header);
+
   tablee.appendChild(table_body);
   body.appendChild(tablee);
   console.log("Created new table with class name " + tableclass);
@@ -153,6 +159,7 @@ function populateTable(tableclass, csv_rows)
     changeTableText(tableclass, i, 3, csv_rows[i + 1][7]); //job_status
     changeTableText(tableclass, i, 4, csv_rows[i + 1][2]); //due_at
     changeTableText(tableclass, i, 5, csv_rows[i + 1][3]); //completed_at
+    changeTableText(tableclass, i, 6, csv_rows[i + 1][8]); //author_name
   }
   console.log("Populated table with " + (csv_rows.length - 2) + " rows of data");
 }

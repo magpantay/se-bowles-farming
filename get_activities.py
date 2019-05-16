@@ -29,18 +29,20 @@ def main():
 	outfile = csv.writer(fileOut_open, delimiter=",", quotechar="|", quoting=csv.QUOTE_MINIMAL)
 	#outCSV = open(fileCSV, "w")
 
-	# note: forcing everything that is a known string to encode as utf-8 as Python fallsback to ASCII which is limited to 127 characters and causes the error: UnicodeEncodeError: 'ascii' codec can't encode character u'\u201c' in position 28: ordinal not in range(128)
+	# note: forcing everything that is a known string to encode (then decode) as utf-8 as Python fallsback to ASCII which is limited to 127 characters and causes the error: UnicodeEncodeError: 'ascii' codec can't encode character u'\u201c' in position 28: ordinal not in range(128)
 	# doing this will resolve the error and (theoretically) prevent it from happening ever again
-	outfile.writerow(["Activity ID".encode("utf-8"), "Task Name".encode("utf-8"), "Due At".encode("utf-8"), "Completed At".encode("utf-8"), "Farm Name".encode("utf-8"), "Field Name".encode("utf-8"), "Field ID".encode("utf-8"), "Job Status".encode("utf-8")]) # first row (header) of CSV file
+	outfile.writerow(["Activity ID", "Task Name", "Due At", "Completed At", "Farm Name", "Field Name", "Field ID", "Job Status", "Author Name"]) # first row (header) of CSV file
 
 	while len(each_result['data']) > 0: # what the following loop does is that while the length of result['data'] > 0, then keep fetching from agworld (because we need to continuously fetch 100 [the maximum allowed at a time, also hence why page[size]=100] at a time until each_result['data']'s length is 0 (aka is []))
 		print ("Writing page {0} of data to '{1}', please wait...".format(counter, fileOut))
 		for i in range(len(each_result['data'])): # inside the loop, we take the current chunk of agworld data and fetch the important bits and save it to a CSV file
 			activity_id = each_result['data'][i]['id']
-			task_name = each_result['data'][i]['attributes']['title'].encode("utf-8") # from tracebacks, this was apparently the problem variable that caused that encode error
+			task_name = each_result['data'][i]['attributes']['title'].encode("utf-8").decode("utf-8") # from tracebacks, this was apparently the problem variable that caused that encode error
 			due_at = "" # will hold (more readable version) of the due date than what AgWorld returns
 			completed_at = "" # will hold (more readable version) of the completed time than what AgWorld returns
 			status = "" # will hold complete-on-time/complete-late/incomplete-late/etc. based on time comparisons
+			author_name = each_result['data'][i]['attributes']['author_user_name'].encode("utf-8").decode("utf-8")
+
 
 			# if the thing is none, apparently it's type NoneType (not string like what I originally thought)
 			# need .__name__ because that gets the name of type alone rather than < class 'TYPE' >
@@ -85,11 +87,11 @@ def main():
 					completed_at = completed_at + " US/Pac"
 					
 			for j in range(len(each_result['data'][i]['attributes']['activity_fields'])): # because apparantly a single assignment can involve multiple fields/farms
-				farm_name = each_result['data'][i]['attributes']['activity_fields'][j]['farm_name'].encode("utf-8")
-				field_name = each_result['data'][i]['attributes']['activity_fields'][j]['field_name'].encode("utf-8")
+				farm_name = each_result['data'][i]['attributes']['activity_fields'][j]['farm_name']
+				field_name = each_result['data'][i]['attributes']['activity_fields'][j]['field_name']
 				field_id = each_result['data'][i]['attributes']['activity_fields'][j]['field_id']
 
-				outfile.writerow([activity_id, task_name, due_at.encode("utf-8"), completed_at.encode("utf-8"), farm_name, field_name, field_id, status.encode("utf-8")])
+				outfile.writerow([activity_id, task_name, due_at, completed_at, farm_name, field_name, field_id, status, author_name])
 				# this will write a row for each farm name as some tasks involve multiple farms (and it seemed easier to do this for easier CSV file parsing)
 				# it works out since we would already have all of the other things to write to the CSV file
 
