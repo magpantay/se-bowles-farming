@@ -410,7 +410,7 @@ Activity ID,Task Name,Due At,Completed At,Farm Name,Field Name,Field ID,Job Stat
 1111948,Drip tape temporary,No due date set,Mar-01-2019 16:30:48 US/Pac,Lone Tree,T-05,416047,COMPLETE-NO-DUE-DATE,Ben Garcia
 1112858,Sprinkler irrigation 4hrs/set,No due date set,Mar-01-2019 08:30:56 US/Pac,Las Animas,L-07E-North,427941,COMPLETE-NO-DUE-DATE,Jeronimo Torres Rosales
 1113215,Connect drip tape on drain end,No due date set,Mar-07-2019 07:00:15 US/Pac,Pick Anderson,P-41,416111,COMPLETE-NO-DUE-DATE,John Palazzo
-1113235,Connect tape to risers,No due date set,Feb-22-2019 07:31:00 US/Pac,Pick Anderson,P-37,416107,IN-PROGRESS-NO-DUE-DATE,John Palazzo
+1113235,Connect tape to risers,No due date set,Feb-22-2019 07:31:00 US/Pac,Pick Anderson,P-37,416107,COMPLETE-NO-DUE-DATE,John Palazzo
 1113238,Connecting  tape,No due date set,Mar-02-2019 07:44:42 US/Pac,Pick Anderson,P-40,416109,COMPLETE-NO-DUE-DATE,John Palazzo
 1113668,Spot spray,Feb-08-2019 11:00:00 US/Pac,Mar-01-2019 01:30:00 US/Pac,Hereford,H-24,416093,COMPLETE-LATE,Douglas Thiel
 1113668,Spot spray,Feb-08-2019 11:00:00 US/Pac,Mar-01-2019 01:30:00 US/Pac,Las Animas,L-35,415997,COMPLETE-LATE,Douglas Thiel
@@ -1115,7 +1115,7 @@ Activity ID,Task Name,Due At,Completed At,Farm Name,Field Name,Field ID,Job Stat
 1242010,Sprinkler irrigation 1hr/set,No due date set,May-01-2019 16:00:20 US/Pac,Las Animas,L-07EN Center,437531,COMPLETE-NO-DUE-DATE,Alvaro Rualacava
 1242015,Watermelon 48hr,No due date set,May-01-2019 07:00:36 US/Pac,Delta Ranch,D-18 Block #4,435755,COMPLETE-NO-DUE-DATE,Alvaro Rualacava
 1242184,12. Irr w/in-32,No due date set,May-02-2019 06:11:54 US/Pac,Pick Anderson,P-16E,416034,COMPLETE-NO-DUE-DATE,John Palazzo
-1242187,12hr irr. W/un-32,No due date set,May-02-2019 06:14:25 US/Pac,Pick Anderson,P-16W,416035,IN-PROGRESS-NO-DUE-DATE,John Palazzo
+1242187,12hr irr. W/un-32,No due date set,May-02-2019 06:14:25 US/Pac,Pick Anderson,P-16W,416035,COMPLETE-NO-DUE-DATE,John Palazzo
 1242212,Transplanting,No due date set,Apr-28-2019 14:31:11 US/Pac,Pick Anderson,P-13W,416005,COMPLETE-NO-DUE-DATE,Ben Garcia
 1242213,Transplanting,No due date set,Apr-29-2019 09:30:49 US/Pac,Pick Anderson,P-12,416004,COMPLETE-NO-DUE-DATE,Ben Garcia
 1242214,Transplanting,No due date set,Apr-29-2019 11:31:10 US/Pac,Las Animas,L-06,415990,COMPLETE-NO-DUE-DATE,Ben Garcia
@@ -1363,7 +1363,7 @@ Activity ID,Task Name,Due At,Completed At,Farm Name,Field Name,Field ID,Job Stat
 1259136,Miticide,No due date set,May-11-2019 05:30:00 US/Pac,Delta Ranch,D-19 Block #2,435759,COMPLETE-NO-DUE-DATE,Ricardo Ruvalcaba
 1259136,Miticide,No due date set,May-11-2019 05:30:00 US/Pac,Delta Ranch,D-19 Block #3,432290,COMPLETE-NO-DUE-DATE,Ricardo Ruvalcaba
 1259183,Transplant Blend,No due date set,May-14-2019 14:00:30 US/Pac,Hereford,H-14,416089,PARTIALLY-COMPLETE-NO-DUE-DATE,Ben Garcia
-1259206,Transplant Blend,No due date set,May-11-2019 14:00:54 US/Pac,Hereford,H-15,416090,PARTIALLY-COMPLETE-NO-DUE-DATE,Ben Garcia
+1259206,Transplant Blend,No due date set,May-16-2019 17:00:54 US/Pac,Hereford,H-15,416090,PARTIALLY-COMPLETE-NO-DUE-DATE,Ben Garcia
 1259541,Furrow Irrigation,No due date set,May-11-2019 07:00:59 US/Pac,Las Animas,L-06,415990,COMPLETE-NO-DUE-DATE,Alvaro Rualacava
 1259545,Fungicide,No due date set,May-12-2019 18:30:13 US/Pac,Delta Ranch,D-06,416057,COMPLETE-NO-DUE-DATE,Alvaro Rualacava
 1259546,Sprinkler irrigation 10hr,No due date set,May-12-2019 17:00:29 US/Pac,Elbon,E-06,416070,COMPLETE-NO-DUE-DATE,Alvaro Rualacava
@@ -1495,3 +1495,35 @@ Activity ID,Task Name,Due At,Completed At,Farm Name,Field Name,Field ID,Job Stat
 1268430,Platinum,No due date set,May-15-2019 14:00:59 US/Pac,Pick Anderson,P-42,416112,IN-PROGRESS-NO-DUE-DATE,John Palazzo
 1268448,Cultivating,No due date set,May-16-2019 18:31:42 US/Pac,Pick Anderson,P-42,416112,COMPLETE-NO-DUE-DATE,John Palazzo
 1268449,12 hr. Irrigation with on-32,No due date set,May-16-2019 14:46:47 US/Pac,Pick Anderson,P-17,416033,COMPLETE-NO-DUE-DATE,John Palazzo
+1268651,Tomato 8 hr in-32,No due date set,May-14-2019 17:00:13 US/Pac,Pick Anderson,P-16E,416034,COMPLETE-NO-DUE-DATE,John Palazzo
+1268651,Tomato 8 hr in-32,No due date set,May-14-2019 17:00:13 US/Pac,Pick Anderson,P-16W,416035,COMPLETE-NO-DUE-DATE,John Palazzo
+1268651,Tomato 8 hr in-32,No due date set,May-14-2019 17:00:13 US/Pac,Pick Anderson,P-18,416032,COMPLETE-NO-DUE-DATE,John Palazzo
+1268651,Tomato 8 hr in-32,No due date set,May-14-2019 17:00:13 US/Pac,Pick Anderson,P-19,416011,COMPLETE-NO-DUE-DATE,John Palazzo
+1269204,Tomato 8hr UN32,No due date set,May-15-2019 17:00:47 US/Pac,Pick Anderson,P-16E,416034,COMPLETE-NO-DUE-DATE,John Palazzo
+1269204,Tomato 8hr UN32,No due date set,May-15-2019 17:00:47 US/Pac,Pick Anderson,P-16W,416035,COMPLETE-NO-DUE-DATE,John Palazzo
+1269204,Tomato 8hr UN32,No due date set,May-15-2019 17:00:47 US/Pac,Pick Anderson,P-18,416032,COMPLETE-NO-DUE-DATE,John Palazzo
+1269204,Tomato 8hr UN32,No due date set,May-15-2019 17:00:47 US/Pac,Pick Anderson,P-19,416011,COMPLETE-NO-DUE-DATE,John Palazzo
+1269276,Tomato 10hr  drip no fert,No due date set,May-16-2019 16:43:56 US/Pac,Delta Ranch,D-26,416135,COMPLETE-NO-DUE-DATE,Alvaro Rualacava
+1269277,Platinum,No due date set,May-16-2019 12:30:28 US/Pac,Las Animas,L-05,415989,IN-PROGRESS-NO-DUE-DATE,Alvaro Rualacava
+1269281,24 hr.irr. W/can-17,No due date set,Apr-23-2019 19:30:34 US/Pac,Pick Anderson,P-14E,416003,COMPLETE-NO-DUE-DATE,John Palazzo
+1269282,Check leaks,No due date set,Apr-04-2019 17:15:15 US/Pac,Pick Anderson,P-16W,416035,COMPLETE-NO-DUE-DATE,John Palazzo
+1269283,9 hr irrig. Water only,No due date set,Apr-10-2019 16:30:35 US/Pac,Pick Anderson,P-17,416033,COMPLETE-NO-DUE-DATE,John Palazzo
+1269284,Connect drip risers,No due date set,Mar-30-2019 15:30:43 US/Pac,Pick Anderson,P-02,416009,COMPLETE-NO-DUE-DATE,John Palazzo
+1269285,Digging up risers,No due date set,Mar-28-2019 14:25:40 US/Pac,Pick Anderson,P-14W,416002,COMPLETE-NO-DUE-DATE,John Palazzo
+1269287,Can-17   /24 HR IRRIG.,No due date set,Apr-05-2019 07:33:46 US/Pac,Pick Anderson,P-14E,416003,COMPLETE-NO-DUE-DATE,John Palazzo
+1269288,12 hr.irrig. W/can-17,No due date set,Apr-04-2019 17:00:14 US/Pac,Pick Anderson,P-15,416036,COMPLETE-NO-DUE-DATE,John Palazzo
+1269289,Drip irrigation,No due date set,Apr-07-2019 16:30:43 US/Pac,Pick Anderson,P-14E,416003,COMPLETE-NO-DUE-DATE,John Palazzo
+1269290,Drip irrigation,No due date set,Apr-16-2019 17:00:46 US/Pac,Pick Anderson,P-02,416009,COMPLETE-NO-DUE-DATE,John Palazzo
+1269291,Drip irrigation,No due date set,Apr-16-2019 16:30:20 US/Pac,Pick Anderson,P-16E,416034,COMPLETE-NO-DUE-DATE,John Palazzo
+1269292,Drip irr.,No due date set,Apr-08-2019 04:30:49 US/Pac,Pick Anderson,P-14E,416003,COMPLETE-NO-DUE-DATE,John Palazzo
+1269293,24 hr irr.W/ 10 -un-32,No due date set,May-07-2019 07:00:21 US/Pac,Pick Anderson,P-12,416004,COMPLETE-NO-DUE-DATE,John Palazzo
+1269294,24 hr. Irrig./10 gal. Un-32,No due date set,May-08-2019 07:12:11 US/Pac,Pick Anderson,P-15,416036,COMPLETE-NO-DUE-DATE,John Palazzo
+1269295,Weeding Crew 1st Pass,No due date set,May-11-2019 08:30:05 US/Pac,Pick Anderson,P-16W,416035,COMPLETE-NO-DUE-DATE,John Palazzo
+1269296,Weeding Crew 1st Pass,No due date set,May-20-2019 14:30:06 US/Pac,Pick Anderson,P-19,416011,COMPLETE-NO-DUE-DATE,John Palazzo
+1269297,12 hr.irr. W/thiosul,No due date set,May-15-2019 19:32:17 US/Pac,Pick Anderson,P-14W,416002,COMPLETE-NO-DUE-DATE,John Palazzo
+1269299,12 hr. Irr. W/thiosul,No due date set,May-14-2019 17:00:15 US/Pac,Pick Anderson,P-14E,416003,COMPLETE-NO-DUE-DATE,John Palazzo
+1269300,12 hr. Irr.W/un-32,No due date set,May-14-2019 17:00:12 US/Pac,Pick Anderson,P-02,416009,COMPLETE-NO-DUE-DATE,John Palazzo
+1269308,Sprinklers Irrigation 24hrs/set,No due date set,May-16-2019 08:00:47 US/Pac,Elbon,E-03,416067,COMPLETE-NO-DUE-DATE,Jeronimo Torres Rosales
+1269321,Connect tape to risers,No due date set,Apr-08-2019 16:30:51 US/Pac,Pick Anderson,P-37,416107,COMPLETE-NO-DUE-DATE,John Palazzo
+1269323,Platinum w/ 4hr irr.,No due date set,May-15-2019 11:00:05 US/Pac,Pick Anderson,P-38,416108,COMPLETE-NO-DUE-DATE,John Palazzo
+1269324,12hr irr. W/un-32,No due date set,May-02-2019 16:30:44 US/Pac,Pick Anderson,P-16W,416035,COMPLETE-NO-DUE-DATE,John Palazzo

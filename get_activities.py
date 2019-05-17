@@ -10,7 +10,7 @@ from dateutil.parser import parse as date_parse # dateutil.parser.parse(), for c
 from datetime import datetime					# for getting current system time (datetime.datetime.now()), also needed for time comparison and astimezone (tz conversion for mismatched tz timestamps) || Current call syntax: datetime.now(), obj.astimezone()
 import csv										# for the creation of fileOut CSV file and editing of fileCSV CSV file. || Current call syntax:
 from dateutil import tz							# for getting system timezone, other specific timezones, in order to convert datetimes into different timezones for astimezone() || Current call syntax: tz.gettz(), tz.tzlocal()
-from collections import Counter
+from collections import Counter					# for creating an array with unique values and a counter if there's any duplicates, basically || Current call syntax: Counter(array)
 
 
 def main():
@@ -28,9 +28,10 @@ def main():
 
 	fileOut_open = open(fileOut, "w") # need to specify a variable to open a file (rather than it being inline with csv.writer) in order to properly close the file when finished with the program, as csv.writer has no close() function
 	outfile = csv.writer(fileOut_open, delimiter=",", quotechar="|", quoting=csv.QUOTE_MINIMAL)
-	#outCSV = open(fileCSV, "w")
 
-	field_list_and_statuses = []
+	fields_in_progress_good = [] # list of all fields with in-progress tasks that are good (or have no due date)
+	fields_in_progress_late = [] # list of all fields with in-progress tasks that are late
+	# for the rest of the fields, we can assume they're complete since we got all of the in-progress possibilities
 
 	# note: forcing everything that is a known string to encode (then decode) as utf-8 as Python fallsback to ASCII which is limited to 127 characters and causes the error: UnicodeEncodeError: 'ascii' codec can't encode character u'\u201c' in position 28: ordinal not in range(128)
 	# doing this will resolve the error and (theoretically) prevent it from happening ever again
@@ -51,7 +52,7 @@ def main():
 			# need .__name__ because that gets the name of type alone rather than < class 'TYPE' >
 			if type(each_result['data'][i]['attributes']['due_at']).__name__ != "NoneType" and type(each_result['data'][i]['attributes']['completed_at']).__name__ != "NoneType": # if due date isn't none and completed at isn't none, then completed?? ||If there is a Due Date and a Complete Date, task_status = complete
 				dtDueAt = date_parse(each_result['data'][i]['attributes']['due_at']).astimezone(timezone)
-				dtCompAt = date_parse(each_result['data'][i]['attributes']['completed_at']).astimezone(timezone) 
+				dtCompAt = date_parse(each_result['data'][i]['attributes']['completed_at']).astimezone(timezone)
 
 				status = "COMPLETE"
 				if dtCompAt <= dtDueAt:
@@ -88,7 +89,7 @@ def main():
 
 					completed_at = dtCompAt.strftime("%b-%d-%Y %H:%M:%S") # then save that completed time
 					completed_at = completed_at + " US/Pac"
-					
+
 			for j in range(len(each_result['data'][i]['attributes']['activity_fields'])): # because apparantly a single assignment can involve multiple fields/farms
 				farm_name = each_result['data'][i]['attributes']['activity_fields'][j]['farm_name']
 				field_name = each_result['data'][i]['attributes']['activity_fields'][j]['field_name']
@@ -97,8 +98,10 @@ def main():
 				outfile.writerow([activity_id, task_name, due_at, completed_at, farm_name, field_name, field_id, status, author_name])
 				# this will write a row for each farm name as some tasks involve multiple farms (and it seemed easier to do this for easier CSV file parsing)
 				# it works out since we would already have all of the other things to write to the CSV file
-
-				field_list_and_status.append("{0} {1}-{2}".format(farm_name, field_name, status))
+				if status == "IN-PROGRESS-GOOD" or status == "IN-PROGRESS-NO-DUE-DATE":
+					fields_in_progress_good.append("{0}||{1}".format(farm_name, field_name))
+				elif status == "IN-PROGRESS-LATE":
+					fields_in_progress_late.append("{0}||{1}".format(farm_name, field_name))
 
 		print("Wrote page {0} to '{1}'".format(counter, fileOut))
 		counter = counter + 1	# to get the next 100 or so tasks
@@ -108,21 +111,37 @@ def main():
 	print("Page {0} of data didn't have anything. Everything has been written to '{1}'".format(counter, fileOut))
 	fileOut_open.close()
 
-	Counter(field_list_and_status)
+	# I was keeping track of the fields that are in progress to change the color of those specific fields in the map
+	# every other field not in any of these arrays are assumed complete and will be color green
+	fields_in_progress_good = set(fields_in_progress_good) # makes all of the values unique, removes duplicates
+	fields_in_progress_late = set(fields_in_progress_late)
+	print(fields_in_progress_good)
+	print("---------------")
+	print(fields_in_progress_late)
+
+	geomsCSVfileread = open("geoms.csv", "r")
+	geomsCSVread = csv.reader(geomsCSVfileread, delimiter=",")
+	geoms_csv_contents = list(geomsCSVread)
+	geomsCSVfileread.close()
+
+	geomsCSVfilewrite = open("geoms.csv", "w")
+	geomsCSVwrite = csv.writer(geomsCSVfilewrite, delimiter=",", quotechar="|", quoting=csv.QUOTE_MINIMAL)
+
+	for i in range(1, len(geoms_csv_contents)): # start at 1, set all to green first
+		geoms_csv_contents[i][4] = "#00FF00"
+		geoms_csv_contents[i][7] = "#00FF00"
+	for i in range(1, len(geoms_csv_contents)):
+		for good_field_names in fields_in_progress_good:
+			if good_field_names.split("||")[0] == geoms_csv_contents[i][1] and good_field_names.split("||")[1] == geoms_csv_contents[i][2]: # if the farm name and field name maatch the farm name, field name of the csv file
+				geoms_csv_contents[i][4] = "#D7DF01" # change the value of stroke to dark yellow
+				geoms_csv_contents[i][7] = "#D7DF01" # change the value of fill to dark yellow
+		for late_field_names in fields_in_progress_late:
+			if late_field_names.split("||")[0] == geoms_csv_contents[i][1] and late_field_names.split("||")[1] == geoms_csv_contents[i][2]: # if the farm name and field name maatch the farm name, field name of the csv file
+				geoms_csv_contents[i][4] = "#FF0000" # change the value of stroke to red
+				geoms_csv_contents[i][7] = "#FF0000" # change the value of fill to red
+	for row in geoms_csv_contents: # time to write with the changed colors
+		geomsCSVwrite.writerow(row)
+	geomsCSVfilewrite.close()
 
 if __name__ == "__main__":
 	main()
-
-# ---- CODE GRAVEYARD ---- #
-			#-------------------------------------------------------------------------------------------------------
-			# the list of things that we've tried that some things in the JSON file have, but not all (as in, exists in some not in all. It's lack of existence breaks this program though)
-			#outfile.write("Activity ID [job_activities]: {0}\n".format(each_result['data'][i]['attributes']['job_activities']['activity_id']))
-			#outfile.write("Activity Type [job_activities]: {0}\n".format(each_result['data'][i]['attributes']['job_activities']['activity_type']))
-			#Type of Category
-			#outfile.write("Activity ID: {0}\n".format(each_result['data'][i]['activity_category']))
-			#------Unsure on these
-			#Who ordered the ActivJob Status: tity (author)
-			#outfile.write("Author User Name: {0}\n".format(each_result['data'][i]['attributes']['job_activities']['author_user_name']))
-			#outfile.write ("Operator Name: {0}\n".format(each_result['data'][i]['attributes']['operator_users'][0]['name']))
-			#-------------------------------------------------------------------------------------------------------
-# ---- END GRAVEYARD ---- #
