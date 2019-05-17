@@ -16,57 +16,61 @@ function tableCreation(tableclass, csv_rows_length)
   var table_head = document.createElement("thead");
   table_head.setAttribute('class', tableclass + '_head');
 
+  var table_header_row = document.createElement("tr"); //because the head is supposed to, by convention, contain a row (tr) of columns (th)
+  table_header_row.setAttribute('class', tableclass + '_header_row');
+
   var table_header = document.createElement('th');
   table_header.setAttribute('class', tableclass + '_header');
   table_header.setAttribute('id', 'task_name');
   table_header.innerHTML = "Task Name";
   //table_header.style.border = "1px solid white";
-  table_head.appendChild(table_header); //append table header to thead
+  table_header_row.appendChild(table_header); //append table header to thead
 
   table_header = document.createElement('th');
   table_header.setAttribute('class', tableclass + '_header');
   table_header.setAttribute('id', 'farm_name');
   table_header.innerHTML = "Farm Name";
   //table_header.style.border = "1px solid white";
-  table_head.appendChild(table_header); //append table header to thead
+  table_header_row.appendChild(table_header); //append table header to thead
 
   table_header = document.createElement('th');
   table_header.setAttribute('class', tableclass + '_header');
   table_header.setAttribute('id', 'field_name');
   table_header.innerHTML = "Field Name";
   //table_header.style.border = "1px solid white";
-  table_head.appendChild(table_header); //append table header to thead
+  table_header_row.appendChild(table_header); //append table header to row
 
   table_header = document.createElement('th');
   table_header.setAttribute('class', tableclass + '_header');
   table_header.setAttribute('id', 'status');
   table_header.innerHTML = "Task Status";
   //table_header.style.border = "1px solid white";
-  table_head.appendChild(table_header); //append table header to thead
+  table_header_row.appendChild(table_header); //append table header to row
 
   table_header = document.createElement('th');
   table_header.setAttribute('class', tableclass + '_header');
   table_header.setAttribute('id', 'due_date');
   table_header.innerHTML = "Due Date";
   //table_header.style.border = "1px solid white";
-  table_head.appendChild(table_header); //append table header to thead
+  table_header_row.appendChild(table_header); //append table header to row
 
   table_header = document.createElement('th');
   table_header.setAttribute('class', tableclass + '_header');
   table_header.setAttribute('id', 'completed_date');
   table_header.innerHTML = "Completed Date";
   //table_header.style.border = "1px solid white";
-  table_head.appendChild(table_header); //append table header to thead
+  table_header_row.appendChild(table_header); //append table header to row
 
   table_header = document.createElement('th');
   table_header.setAttribute('class', tableclass + '_header');
   table_header.setAttribute('id', 'author_name');
   table_header.innerHTML = "Author Name";
-  table_head.appendChild(table_header); //append table header to thead
+  table_header_row.appendChild(table_header); //append table header to row
 
-  tablee.appendChild(table_head); //append table_head (with all of the headers) to table
+  table_head.appendChild(table_header_row); //append table row (with all of the headers) to head
+  tablee.appendChild(table_head); //append table head to table
 
-  console.log("Created new table with " + (tablee.getElementsByTagName('th').length) + " columns with class name " + tableclass);
+  console.log("Created new table with " + (table_header_row.getElementsByTagName('th').length) + " columns with class name " + tableclass);
 
   /* table body creation */
   var tableBody = document.createElement("tbody");
