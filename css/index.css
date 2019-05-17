@@ -21,13 +21,7 @@ h1
 	text-align: center;
   text-decoration: underline;
   margin-bottom: 0px;
-}
-
-.iframe
-{
-  height: 520px;
-  width: 100%;
-  position: absolute;
+  margin-top:10px;
 }
 
 .tab1
