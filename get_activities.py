@@ -10,6 +10,7 @@ from dateutil.parser import parse as date_parse # dateutil.parser.parse(), for c
 from datetime import datetime					# for getting current system time (datetime.datetime.now()), also needed for time comparison and astimezone (tz conversion for mismatched tz timestamps) || Current call syntax: datetime.now(), obj.astimezone()
 import csv										# for the creation of fileOut CSV file and editing of fileCSV CSV file. || Current call syntax:
 from dateutil import tz							# for getting system timezone, other specific timezones, in order to convert datetimes into different timezones for astimezone() || Current call syntax: tz.gettz(), tz.tzlocal()
+from collections import Counter
 
 
 def main():
@@ -28,6 +29,8 @@ def main():
 	fileOut_open = open(fileOut, "w") # need to specify a variable to open a file (rather than it being inline with csv.writer) in order to properly close the file when finished with the program, as csv.writer has no close() function
 	outfile = csv.writer(fileOut_open, delimiter=",", quotechar="|", quoting=csv.QUOTE_MINIMAL)
 	#outCSV = open(fileCSV, "w")
+
+	field_list_and_statuses = []
 
 	# note: forcing everything that is a known string to encode (then decode) as utf-8 as Python fallsback to ASCII which is limited to 127 characters and causes the error: UnicodeEncodeError: 'ascii' codec can't encode character u'\u201c' in position 28: ordinal not in range(128)
 	# doing this will resolve the error and (theoretically) prevent it from happening ever again
@@ -95,13 +98,18 @@ def main():
 				# this will write a row for each farm name as some tasks involve multiple farms (and it seemed easier to do this for easier CSV file parsing)
 				# it works out since we would already have all of the other things to write to the CSV file
 
-		print ("Wrote page {0} to '{1}'".format(counter, fileOut))
+				field_list_and_status.append("{0} {1}-{2}".format(farm_name, field_name, status))
+
+		print("Wrote page {0} to '{1}'".format(counter, fileOut))
 		counter = counter + 1	# to get the next 100 or so tasks
 		print("Getting page {0} of data, please wait...".format(counter))
 		response = web_get('https://us.agworld.co/user_api/v1/activities?api_token={0}&page[number]={1}&page[size]=100'.format(apiKey, counter), headers={"Content-Type":"application/vnd.api+json", "Accept":"application/vnd.api+json"})
 		each_result = json_parser(response.text)
 	print("Page {0} of data didn't have anything. Everything has been written to '{1}'".format(counter, fileOut))
 	fileOut_open.close()
+
+	Counter(field_list_and_status)
+
 if __name__ == "__main__":
 	main()
 
