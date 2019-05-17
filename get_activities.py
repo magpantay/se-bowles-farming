@@ -10,13 +10,11 @@ from dateutil.parser import parse as date_parse # dateutil.parser.parse(), for c
 from datetime import datetime					# for getting current system time (datetime.datetime.now()), also needed for time comparison and astimezone (tz conversion for mismatched tz timestamps) || Current call syntax: datetime.now(), obj.astimezone()
 import csv										# for the creation of fileOut CSV file and editing of fileCSV CSV file. || Current call syntax:
 from dateutil import tz							# for getting system timezone, other specific timezones, in order to convert datetimes into different timezones for astimezone() || Current call syntax: tz.gettz(), tz.tzlocal()
-from collections import Counter					# for creating an array with unique values and a counter if there's any duplicates, basically || Current call syntax: Counter(array)
-
 
 def main():
 	# ---- THESE ARE THE ONLY VARIABLE VALUES ANY USER REALLY NEEDS TO CHANGE, EVERYTHING ELSE IS HANDLED WITH THIS INFORMATION AND DOESN'T NEED TO BE TOUCHED ---- #
 	fileOut = "things.csv"
-	fileCSV = "geoms.csv"
+	geomsCSVfilename = "geoms.csv"
 	timezone = tz.gettz("US/Pacific") # for timestamp conversion to US/Pacific time (as Agworld returns -6:00 timezone, but Bowles farms are in the US/Pacific timezone)
 	apiKey = "wFdJRAHjwzylncYDdwrcKw"
 	# ---- END ---- #
@@ -116,28 +114,40 @@ def main():
 	fields_in_progress_good = set(fields_in_progress_good) # makes all of the values unique, removes duplicates
 	fields_in_progress_late = set(fields_in_progress_late)
 
-	print("Changing geoms.csv, please wait...")
+	print("Changing {0}, please wait...".format(geomsCSVfilename))
 
-	geomsCSVfileread = open("geoms.csv", "r")
+	geomsCSVfileread = open(geomsCSVfilename, "r")
 	geomsCSVread = csv.reader(geomsCSVfileread, delimiter=",")
 	geoms_csv_contents = list(geomsCSVread)
 	geomsCSVfileread.close()
 
-	geomsCSVfilewrite = open("geoms.csv", "w")
+	geomsCSVfilewrite = open(geomsCSVfilename, "w")
 	geomsCSVwrite = csv.writer(geomsCSVfilewrite, delimiter=",", quotechar="|", quoting=csv.QUOTE_MINIMAL)
 
 	for i in range(1, len(geoms_csv_contents)): # start at 1, set all to green first
 		geoms_csv_contents[i][4] = "#00FF00"
 		geoms_csv_contents[i][7] = "#00FF00"
+
 	for i in range(1, len(geoms_csv_contents)):
 		for good_field_names in fields_in_progress_good:
-			if good_field_names.split("||")[0] == geoms_csv_contents[i][1] and good_field_names.split("||")[1] == geoms_csv_contents[i][2]: # if the farm name and field name maatch the farm name, field name of the csv file
-				geoms_csv_contents[i][4] = "#D7DF01" # change the value of stroke to dark yellow
-				geoms_csv_contents[i][7] = "#D7DF01" # change the value of fill to dark yellow
+			if good_field_names.split("||")[1].find("Block") == -1: # split with || because that's the format I chose for writing the strings to the array
+				if good_field_names.split("||")[0] == geoms_csv_contents[i][1] and good_field_names.split("||")[1].split(" #")[0] == geoms_csv_contents[i][2]: # if the farm name and field name maatch the farm name, field name of the csv file, for the # split, it is because the geoms file and AgWorld's field name are slightly different in format (example: Agworld: Lone Tree T-10 #02 vs. geoms: Lone Tree T-10)
+					geoms_csv_contents[i][4] = "#D7DF01" # change the value of stroke to dark yellow
+					geoms_csv_contents[i][7] = "#D7DF01" # change the value of fill to dark yellow
+			else: # for some oddd reason, except for fields that have the word 'Block' in them, those are the same across the both files
+				if good_field_names.split("||")[0] == geoms_csv_contents[i][1] and good_field_names.split("||")[1] == geoms_csv_contents[i][2]:
+					geoms_csv_contents[i][4] = "#D7DF01" # change the value of stroke to dark yellow
+					geoms_csv_contents[i][7] = "#D7DF01" # change the value of fill to dark yellow
 		for late_field_names in fields_in_progress_late:
-			if late_field_names.split("||")[0] == geoms_csv_contents[i][1] and late_field_names.split("||")[1] == geoms_csv_contents[i][2]: # if the farm name and field name maatch the farm name, field name of the csv file
-				geoms_csv_contents[i][4] = "#FF0000" # change the value of stroke to red
-				geoms_csv_contents[i][7] = "#FF0000" # change the value of fill to red
+			if late_field_names.split("||")[1].find("Block") == -1:
+				if late_field_names.split("||")[0] == geoms_csv_contents[i][1] and late_field_names.split("||")[1].split(" #")[0] == geoms_csv_contents[i][2]: # if the farm name and field name maatch the farm name, field name of the csv file, for the # split, it is because the geoms file and AgWorld's field name are slightly different in format (example: Agworld: Lone Tree T-10 #02 vs. geoms: Lone Tree T-10)
+					geoms_csv_contents[i][4] = "#FF0000" # change the value of stroke to red
+					geoms_csv_contents[i][7] = "#FF0000" # change the value of fill to red
+			else: # for some oddd reason, except for fields that have the word 'Block' in them, those are the same across the both files
+				if late_field_names.split("||")[0] == geoms_csv_contents[i][1] and late_field_names.split("||")[1] == geoms_csv_contents[i][2]:
+					geoms_csv_contents[i][4] = "#FF0000" # change the value of stroke to red
+					geoms_csv_contents[i][7] = "#FF0000" # change the value of fill to red
+
 	for row in geoms_csv_contents: # time to write with the changed colors
 		geomsCSVwrite.writerow(row)
 	geomsCSVfilewrite.close()
