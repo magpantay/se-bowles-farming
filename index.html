@@ -6,12 +6,9 @@
           <!--<meta http-equiv="refresh" content="600"> <!-- Refresh every 30 seconds, no JS needed! -->
 
           <!-- Cheeky little nosy thing, aren't ya? -->
-     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
+     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
      <link href="index.css" rel="stylesheet" type="text/css" </link> <script type="text/javascript" src="js/index.js"></script>
-     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
-     <!-- jQuery -->
-     <script src="js/papaparse.min.js"></script>
-     <!-- PapaParse (for CSV parsing) -->
+     <script src="js/papaparse.min.js"></script> <!-- PapaParse (for CSV parsing) -->
      <link rel="icon" type="image/x-icon" href="https://bfarm.com/ca-agriculture/favicon.ico">
      <title>Bowles Farming Group 13</title>
 </head>
@@ -26,10 +23,12 @@
           webkitallowfullscreen="webkitallowfullscreen"
           mozallowfullscreen="mozallowfullscreen"
           oallowfullscreen="oallowfullscreen"
-          msallowfullscreen="msallowfullscreen"></iframe>
+          msallowfullscreen="msallowfullscreen">
+      </iframe>
 
      <h1>Task List</h1>
      <script type="text/javascript">
+          var tableName = "tab1";
           var csv_rows = new Array(); //no size arg means it's a dynamically sized array
           // this array will hold arrays from the rows of the CSV files (basically array of arrays lol)
 
@@ -47,14 +46,9 @@
                     console.log(
                          "We now have a " + csv_rows.length + " x " + csv_rows[0].length + " array (yes, this includes the first row [aka column names] of the CSV and, for some odd reason, an extra blank line at the end of the CSV (dw, I've offset values to account for these))"
                     );
-
-                    tableCreation("tab1"); //create table with class name tab1
-                    for (var i = 1; i < csv_rows.length - 1; i++) { //i=1 to account for top header of CSV file (which is at csv_rows[0]), csv_rows.length offset by 1 because of the that PapaParse seems to include an extra blank line in the end of the CSV file
-                         tableRowCreate("tab1", i-1);
-                    }
-
-                    populateTable("tab1", csv_rows);
-                    addColorToTaskStatus("tab1"); //adds color to task status portion of table
+                    tableCreation(tableName, csv_rows.length); //create table with class name tab1 with the rows and columns (empty)
+                    populateTable(tableName, csv_rows); //adds text to the rows of the table
+                    addColorToTaskStatus(tableName); //adds color to task status portion of table
                }
           });
      </script>

@@ -1,100 +1,107 @@
 //note: honestly the ids don't seem to matter, they're just for organizational purposes
 //the ids don't matter since we access the table's rows and cols by row,col coordinates
 //the tableclass is important, though, because we access that specific table by the table class name
-function tableCreation(tableclass)
-//creates a table with user-defined class name with 4 table headers
+function tableCreation(tableclass, csv_rows_length)
+//creates a table with user-defined class name with 6 table headers
+//creates all of the rows (and columns by necessity) based on the amount of csv rows there are for the table, which will be filled later by populateTable
 //note: tableclass must be in quotes
 {
   var body = document.body;
   tablee = document.createElement("table");
-  tablee.style.width = "100%";
+  //tablee.style.width = "100%";
   //tablee.style.border = "1px solid white";
-  tablee.setAttribute('class', tableclass);
+  tablee.setAttribute('class', tableclass); //!!!! this is important for finding the table (and, by association, table body) in other functions !!!!
 
-  var table_body = document.createElement("tbody");
+  /* table head creation */
+  var table_head = document.createElement("thead");
+  table_head.setAttribute('class', tableclass + '_head');
 
   var table_header = document.createElement('th');
   table_header.setAttribute('class', tableclass + '_header');
   table_header.setAttribute('id', 'task_name');
   table_header.innerHTML = "Task Name";
   //table_header.style.border = "1px solid white";
-  table_body.appendChild(table_header);
+  table_head.appendChild(table_header); //append table header to thead
 
   table_header = document.createElement('th');
   table_header.setAttribute('class', tableclass + '_header');
   table_header.setAttribute('id', 'farm_name');
   table_header.innerHTML = "Farm Name";
   //table_header.style.border = "1px solid white";
-  table_body.appendChild(table_header);
+  table_head.appendChild(table_header); //append table header to thead
 
   table_header = document.createElement('th');
   table_header.setAttribute('class', tableclass + '_header');
   table_header.setAttribute('id', 'field_name');
   table_header.innerHTML = "Field Name";
   //table_header.style.border = "1px solid white";
-  table_body.appendChild(table_header);
+  table_head.appendChild(table_header); //append table header to thead
 
   table_header = document.createElement('th');
   table_header.setAttribute('class', tableclass + '_header');
   table_header.setAttribute('id', 'status');
   table_header.innerHTML = "Task Status";
   //table_header.style.border = "1px solid white";
-  table_body.appendChild(table_header);
+  table_head.appendChild(table_header); //append table header to thead
 
   table_header = document.createElement('th');
   table_header.setAttribute('class', tableclass + '_header');
   table_header.setAttribute('id', 'due_date');
   table_header.innerHTML = "Due Date";
   //table_header.style.border = "1px solid white";
-  table_body.appendChild(table_header);
+  table_head.appendChild(table_header); //append table header to thead
 
   table_header = document.createElement('th');
   table_header.setAttribute('class', tableclass + '_header');
   table_header.setAttribute('id', 'completed_date');
   table_header.innerHTML = "Completed Date";
   //table_header.style.border = "1px solid white";
-  table_body.appendChild(table_header);
+  table_head.appendChild(table_header); //append table header to thead
 
   table_header = document.createElement('th');
   table_header.setAttribute('class', tableclass + '_header');
   table_header.setAttribute('id', 'author_name');
   table_header.innerHTML = "Author Name";
-  table_body.appendChild(table_header);
+  table_head.appendChild(table_header); //append table header to thead
 
-  tablee.appendChild(table_body);
-  body.appendChild(tablee);
-  console.log("Created new table with class name " + tableclass);
-}
+  tablee.appendChild(table_head); //append table_head (with all of the headers) to table
 
-function tableRowCreate(tableclass, rowid)
-//creates a row in a table with a user-defined rowID and a pre-determined column id in the form: row[row#]-col[col#]
-{
-  var tableToEdit = document.getElementsByClassName(tableclass)[0]; //get table to edit
-  var numCols = tableToEdit.getElementsByTagName('th').length; //number of columns
-  //gets the number of tableheader elements in table. made so we can keep number of columns the same
-  var numRows = tableToEdit.rows.length; //becomes a part of the id of new tds (columns)
+  console.log("Created new table with " + (tablee.getElementsByTagName('th').length) + " columns with class name " + tableclass);
 
-  var tableRow = document.createElement('tr'); // create a row
-  tableRow.setAttribute('class', tableclass + '_row');
-  tableRow.setAttribute('id', rowid);
+  /* table body creation */
+  var tableBody = document.createElement("tbody");
+  tableBody.setAttribute("class", tableclass + "_body");
+  tableBody.setAttribute("id", tableclass + "_body");
+  var numCols = tablee.getElementsByTagName('th').length; //number of columns currently in table (th)
 
-  for (var i = 0; i < numCols; i++) //number of td (columns)
+  /* rows creation */
+  for (var i = 0; i < csv_rows_length - 2; i++) //i=0 to account for top header of CSV file (which is at csv_rows[0]), csv_rows.length offset by 2 because of the that PapaParse seems to include an extra blank line in the end of the CSV file
   {
-    var newCol = document.createElement('td');
-    newCol.setAttribute('class', tableclass + '_non_header_col')
-    newCol.setAttribute('id', 'row' + numRows + '-col' + i); //id is in form: row[rowNumber]-col[colNumber]
-    //newCol.style.border = "1px solid white";
-    tableRow.appendChild(newCol); //append to row
+    var tableRow = document.createElement('tr'); //create a row
+    tableRow.setAttribute('class', tableclass + '_row');
+    tableRow.setAttribute('id', i);
+
+    for (var j = 0; j < numCols; j++)
+    {
+      var newCol = document.createElement('td'); //td = columns
+      newCol.setAttribute('class', tableclass + '_non_header_col');
+      newCol.setAttribute('id', 'row' + i + '-col' + j); //id is in form: row[rowNumber]-col[colNumber], starts with 0, hence i-1 offset
+      tableRow.appendChild(newCol); //place the new column in current row
+    }
+    tableBody.appendChild(tableRow); //place the entire current row (with columns) in table body
   }
-  tableToEdit.appendChild(tableRow); //append the entire row to table itself
-  console.log("Created new row in " + tableclass + " with " + numCols + " columns");
+
+  console.log("Created " + (csv_rows_length - 2) + " rows, each with " + numCols + " columns");
+
+  tablee.appendChild(tableBody); //place the entire body (with rows) in table
+  body.appendChild(tablee); //place the entire table in HTML body
 }
 
 function changeTableText(tableclass, rowNum, colNum, text)
 //changes the text on a table of user-defined class and the (row,col) coordinates of that table (note: table headers th don't count as a row)
 {
-  var tableToEdit = document.getElementsByClassName(tableclass)[0];
-  var row = tableToEdit.rows[rowNum];
+  var tableBody = document.getElementsByClassName(tableclass)[0].getElementsByTagName('tbody')[0]; //gets body of table by finding table in document with tableclass, then finding the body of that table
+  var row = tableBody.rows[rowNum]; //number of rows in tableBody
   var col = row.cells[colNum];
   col.innerHTML = text;
 }
@@ -102,8 +109,8 @@ function changeTableText(tableclass, rowNum, colNum, text)
 function setTableElemColor(tableclass, rowNum, colNum, color)
 //changes the background color of specific (row,col) location of a table
 {
-  var table = document.getElementsByClassName(tableclass)[0];
-  var row = table.rows[rowNum];
+  var tableBody = document.getElementsByClassName(tableclass)[0].getElementsByTagName('tbody')[0]; //gets body of table by finding table in document with tableclass, then finding the body of that table
+  var row = tableBody.rows[rowNum]; //number of rows in tableBody
   var elemToChange = row.cells[colNum];
   elemToChange.setAttribute("bgcolor", color);
   //console.log(tableclass + " at (" + rowNum + "," + colNum + ") changed to " + color);
@@ -118,13 +125,13 @@ function setTableElemColor(tableclass, rowNum, colNum, color)
 function addColorToTaskStatus(tableclass)
 //change bg of task status (tableclass[row#][2]) based on incomplete/complete
 {
-  var table = document.getElementsByClassName(tableclass)[0];
-  var numRows = table.rows.length;
+  var tableBody = document.getElementsByClassName(tableclass)[0].getElementsByTagName('tbody')[0]; //gets body of table by finding table in document with tableclass, then finding the body of that table
+  var numRows = tableBody.rows.length; //number of rows in tableBody
   var column_of_task_status = 3; //value of column where task status is (reminder that everything starts at 0)
 
   for (var i = 0; i < numRows; i++)
   {
-    var current_row = table.rows[i];
+    var current_row = tableBody.rows[i];
     var col = current_row.cells[column_of_task_status]; //this is the location of task status at the current row !!HARDCODED!!
     if (col.innerHTML == "IN-PROGRESS-NO-DUE-DATE" || col.innerHTML == "IN-PROGRESS-GOOD")
     {
