@@ -115,9 +115,8 @@ def main():
 	# every other field not in any of these arrays are assumed complete and will be color green
 	fields_in_progress_good = set(fields_in_progress_good) # makes all of the values unique, removes duplicates
 	fields_in_progress_late = set(fields_in_progress_late)
-	print(fields_in_progress_good)
-	print("---------------")
-	print(fields_in_progress_late)
+
+	print("Changing geoms.csv, please wait...")
 
 	geomsCSVfileread = open("geoms.csv", "r")
 	geomsCSVread = csv.reader(geomsCSVfileread, delimiter=",")
