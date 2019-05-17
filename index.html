@@ -3,18 +3,27 @@
      <head>
           <meta charset="utf-8">
           <meta name="viewport" content="width=device-width, initial-scale=1">
-          <!--<meta http-equiv="refresh" content="600"> <!-- Refresh every 30 seconds, no JS needed! -->
+          <meta http-equiv="refresh" content="1200"> <!-- Refresh every 20 minutes, no JS needed! -->
 
           <!-- Cheeky little nosy thing, aren't ya? -->
-     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-     <link href="index.css" rel="stylesheet" type="text/css" </link> <script type="text/javascript" src="js/index.js"></script>
+     <link href="css/raleway_font.css" rel="stylesheet">
+     <link href="css/index.css" rel="stylesheet" type="text/css" </link>
+     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css"> <!-- DataTables CSS file for beautification of table, need to reference outside source otherwise doesn't show correctly -->
+
+     <script type="text/javascript" src="js/index.js"></script>
      <script src="js/jquery-3.4.1.min.js"></script> <!-- jQuery, dependency of DataTables -->
-     <script src="js/papaparse.min.js"></script> <!-- PapaParse (for CSV parsing) -->
-     <link rel="icon" type="image/x-icon" href="https://bfarm.com/ca-agriculture/favicon.ico">
+     <script type="text/javascript" charset="utf8" src="js/jquery-dataTables.js"></script> <!-- DataTables, for table sorting -->
+     <script src="js/papaparse.min.js"></script> <!-- PapaParse, for CSV parsing -->
+
+     <link rel="icon" type="image/x-icon" href="favicon.ico">
      <title>Bowles Farming Group 13</title>
 </head>
 
 <body>
+     <noscript>
+             <p id='no-js' class='no-js'>Looks like your browser does not have JavaScript enabled! :( <br /> <br /> Please enable JavaScript to view this website.</p>
+     </noscript>
+
      <iframe
           width="100%"
           height="520"
@@ -27,8 +36,11 @@
           msallowfullscreen="msallowfullscreen">
       </iframe>
 
-     <h1>Task List</h1>
      <script type="text/javascript">
+          var header = document.createElement("h1"); //needed to create it here in JS so it doesn't display if there isn't JS
+          header.innerHTML = "Task List";
+          document.body.appendChild(header);
+
           var tableName = "tab1";
           var csv_rows = new Array(); //no size arg means it's a dynamically sized array
           // this array will hold arrays from the rows of the CSV files (basically array of arrays lol)
@@ -50,6 +62,16 @@
                     tableCreation(tableName, csv_rows.length); //create table with class name tab1 with the rows and columns (empty)
                     populateTable(tableName, csv_rows); //adds text to the rows of the table
                     addColorToTaskStatus(tableName); //adds color to task status portion of table
+
+                    $(document).ready( function () { //after the table has been created, we use DataTable to make the table searchable and sortable (we have to have our table in the conventional format first, then DataTables wraps its stuff around the table)
+                        $('#' + tableName).DataTable(
+                          {
+                            "order": [], //no order by default for the table
+                            "pageLength":100, //default number of rows in a page is 100
+                            "lengthMenu":[ [10, 25, 50, 100, 1000, -1], [10, 25, 50, 100, 1000, "All"] ], //menu of selectable table row lengths
+                            "stateSave":true //allows the saving of the table state (ex. sorting and filtering/searches, etc.) between refreshes, since the page refreshes every 20 minutes
+                        } );
+                    } );
                }
           });
      </script>

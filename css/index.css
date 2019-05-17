@@ -19,6 +19,8 @@ body
 h1
 {
 	text-align: center;
+  text-decoration: underline;
+  margin-bottom: 0px;
 }
 
 .iframe
@@ -49,4 +51,10 @@ h1
 
 tr:nth-child(even) {
   background-color: #f2f2f2; /* makes zebra-striped table */
+}
+
+.no-js {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
 }

@@ -11,6 +11,7 @@ function tableCreation(tableclass, csv_rows_length)
   //tablee.style.width = "100%";
   //tablee.style.border = "1px solid white";
   tablee.setAttribute('class', tableclass); //!!!! this is important for finding the table (and, by association, table body) in other functions !!!!
+  tablee.setAttribute('id', tableclass);
 
   /* table head creation */
   var table_head = document.createElement("thead");
