@@ -3410,7 +3410,7 @@ Activity ID,Task Name,Due At,Completed At,Farm Name,Field Name,Field ID,Job Stat
 1276753,Weekly,May-22-2019 11:00:00 US/Pac,Task in progress,Hereford,H-05,416101,IN-PROGRESS-LATE,Wayne Pricolo
 1276755,Weekly,May-22-2019 11:00:00 US/Pac,Task in progress,Kreyenhagen,K-02,416127,IN-PROGRESS-LATE,Wayne Pricolo
 1276829,Weekly,May-22-2019 11:00:00 US/Pac,Task in progress,Pick Anderson,P-32,416027,IN-PROGRESS-LATE,Wayne Pricolo
-1276916,KTS,May-23-2019 11:00:00 US/Pac,Task in progress,Pick Anderson,P-17,416033,IN-PROGRESS-LATE,Wayne Pricolo
+1276916,KTS,May-23-2019 11:00:00 US/Pac,May-24-2019 17:00:01 US/Pac,Pick Anderson,P-17,416033,COMPLETE-LATE,Wayne Pricolo
 1277285,Weekly,No due date set,,Pick Anderson,P-23,416024,TO-DO-NO-DUE-DATE,Wayne Pricolo
 1277285,Weekly,No due date set,,Pick Anderson,P-24,416023,TO-DO-NO-DUE-DATE,Wayne Pricolo
 1277286,Weekly,May-22-2019 11:00:00 US/Pac,Task in progress,Pick Anderson,P-25,416022,IN-PROGRESS-LATE,Wayne Pricolo
@@ -3625,3 +3625,70 @@ Activity ID,Task Name,Due At,Completed At,Farm Name,Field Name,Field ID,Job Stat
 1281214,Tomato 10hr  KTS,No due date set,May-25-2019 17:00:23 US/Pac,Delta Ranch,D-26,416135,COMPLETE-NO-DUE-DATE,Alvaro Rualacava
 1281216,Tomato 8hr  drip no fert,No due date set,May-25-2019 15:00:18 US/Pac,Delta Ranch,D-05S,455869,COMPLETE-NO-DUE-DATE,Alvaro Rualacava
 1281216,Tomato 8hr  drip no fert,No due date set,May-25-2019 15:00:18 US/Pac,Delta Ranch,D-11,416060,COMPLETE-NO-DUE-DATE,Alvaro Rualacava
+1281488,Weekly,May-27-2019 11:00:00 US/Pac,Task in progress,Hereford,H-18,416084,IN-PROGRESS-LATE,Wayne Pricolo
+1281502,Weekly,No due date set,,Elbon,E-08,416071,TO-DO-NO-DUE-DATE,Wayne Pricolo
+1281519,Weekly,May-27-2019 11:00:00 US/Pac,Task in progress,Hereford,H-05,416101,IN-PROGRESS-LATE,Wayne Pricolo
+1281519,Weekly,May-27-2019 11:00:00 US/Pac,Task in progress,Hereford,H-06,416102,IN-PROGRESS-LATE,Wayne Pricolo
+1281519,Weekly,May-27-2019 11:00:00 US/Pac,Task in progress,Hereford,H-08,416103,IN-PROGRESS-LATE,Wayne Pricolo
+1281533,Weekly,May-27-2019 11:00:00 US/Pac,Task in progress,Delta Ranch,D-01,416056,IN-PROGRESS-LATE,Wayne Pricolo
+1281534,Weekly,May-27-2019 11:00:00 US/Pac,Task in progress,Hereford,H-24,416093,IN-PROGRESS-LATE,Wayne Pricolo
+1281540,Weekly,May-27-2019 11:00:00 US/Pac,Task in progress,Pick Anderson,P-32,416027,IN-PROGRESS-LATE,Wayne Pricolo
+1281545,Weekly,May-27-2019 11:00:00 US/Pac,Task in progress,Pick Anderson,P-31,416028,IN-PROGRESS-LATE,Wayne Pricolo
+1281551,Weekly,May-27-2019 11:00:00 US/Pac,Task in progress,Pick Anderson,P-27,416025,IN-PROGRESS-LATE,Wayne Pricolo
+1281559,Weekly,May-27-2019 11:00:00 US/Pac,Task in progress,Pick Anderson,P-43,416020,IN-PROGRESS-LATE,Wayne Pricolo
+1281585,Weekly,May-27-2019 11:00:00 US/Pac,Task in progress,Pick Anderson,P-23,416024,IN-PROGRESS-LATE,Wayne Pricolo
+1281585,Weekly,May-27-2019 11:00:00 US/Pac,Task in progress,Pick Anderson,P-24,416023,IN-PROGRESS-LATE,Wayne Pricolo
+1281586,Weekly,May-27-2019 11:00:00 US/Pac,Task in progress,Pick Anderson,P-25,416022,IN-PROGRESS-LATE,Wayne Pricolo
+1281586,Weekly,May-27-2019 11:00:00 US/Pac,Task in progress,Pick Anderson,P-26,416021,IN-PROGRESS-LATE,Wayne Pricolo
+1281599,Weekly,May-27-2019 11:00:00 US/Pac,Task in progress,Pick Anderson,P-20,416031,IN-PROGRESS-LATE,Wayne Pricolo
+1281599,Weekly,May-27-2019 11:00:00 US/Pac,Task in progress,Pick Anderson,P-21,416030,IN-PROGRESS-LATE,Wayne Pricolo
+1281604,UN32  furrow fields sidedress,No due date set,May-25-2019 07:00:44 US/Pac,Hereford,H-24,416093,IN-PROGRESS-NO-DUE-DATE,Gary Sousa
+1281618,Weekly,May-27-2019 11:00:00 US/Pac,Task in progress,Pick Anderson,P-22,416029,IN-PROGRESS-LATE,Wayne Pricolo
+1281638,Weekly,May-27-2019 11:00:00 US/Pac,Task in progress,Pick Anderson,P-08,416037,IN-PROGRESS-LATE,Wayne Pricolo
+1281638,Weekly,May-27-2019 11:00:00 US/Pac,Task in progress,Pick Anderson,P-09,416038,IN-PROGRESS-LATE,Wayne Pricolo
+1281638,Weekly,May-27-2019 11:00:00 US/Pac,Task in progress,Pick Anderson,P-10,416039,IN-PROGRESS-LATE,Wayne Pricolo
+1281660,Weekly,May-27-2019 11:00:00 US/Pac,Task in progress,Pick Anderson,P-13E,416006,IN-PROGRESS-LATE,Wayne Pricolo
+1281689,Weekly,May-27-2019 11:00:00 US/Pac,Task in progress,Pick Anderson,P-01E,416043,IN-PROGRESS-LATE,Wayne Pricolo
+1281689,Weekly,May-27-2019 11:00:00 US/Pac,Task in progress,Pick Anderson,P-01W,416044,IN-PROGRESS-LATE,Wayne Pricolo
+1281717,Weekly,May-27-2019 11:00:00 US/Pac,Task in progress,Pick Anderson,P-34,416106,IN-PROGRESS-LATE,Wayne Pricolo
+1281756,Weekly,May-27-2019 11:00:00 US/Pac,Task in progress,Pick Anderson,P-47,416019,IN-PROGRESS-LATE,Wayne Pricolo
+1281757,Weekly,May-27-2019 11:00:00 US/Pac,Task in progress,Pick Anderson,P-44,416016,IN-PROGRESS-LATE,Wayne Pricolo
+1281758,Weekly,May-27-2019 11:00:00 US/Pac,Task in progress,Pick Anderson,P-45,416017,IN-PROGRESS-LATE,Wayne Pricolo
+1281768,KTS,No due date set,May-24-2019 17:00:01 US/Pac,Pick Anderson,P-17,416033,COMPLETE-NO-DUE-DATE,John Palazzo
+1281770,Weeding Crew 1st Pass,No due date set,May-27-2019 14:00:52 US/Pac,Pick Anderson,P-32,416027,COMPLETE-NO-DUE-DATE,John Palazzo
+1281772,Tomato 4hr Platinum,No due date set,May-27-2019 11:05:50 US/Pac,Pick Anderson,P-12,416004,COMPLETE-NO-DUE-DATE,John Palazzo
+1281773,Tomato 4hr Platinum,No due date set,May-27-2019 12:00:55 US/Pac,Pick Anderson,P-13W,416005,COMPLETE-NO-DUE-DATE,John Palazzo
+1281784,Weekly,May-27-2019 11:00:00 US/Pac,Task in progress,Las Animas,L-35,415997,IN-PROGRESS-LATE,Wayne Pricolo
+1281806,Weekly,No due date set,,Hereford,H-15,416090,TO-DO-NO-DUE-DATE,Colton Pricolo
+1281807,Weekly,May-27-2019 11:00:00 US/Pac,Task in progress,Hereford,H-14,416089,IN-PROGRESS-LATE,Colton Pricolo
+1281809,Weekly,May-27-2019 11:00:00 US/Pac,Task in progress,Hereford,H-13,416088,IN-PROGRESS-LATE,Colton Pricolo
+1281811,Weekly,May-27-2019 11:00:00 US/Pac,Task in progress,Hereford,H-11,416086,IN-PROGRESS-LATE,Colton Pricolo
+1281811,Weekly,May-27-2019 11:00:00 US/Pac,Task in progress,Hereford,H-12,416087,IN-PROGRESS-LATE,Colton Pricolo
+1281812,Weekly,May-27-2019 11:00:00 US/Pac,Task in progress,Hereford,H-09,416080,IN-PROGRESS-LATE,Colton Pricolo
+1281812,Weekly,May-27-2019 11:00:00 US/Pac,Task in progress,Hereford,H-10,416081,IN-PROGRESS-LATE,Colton Pricolo
+1281819,Weekly,May-27-2019 11:00:00 US/Pac,Task in progress,Elbon,E-04,416068,IN-PROGRESS-LATE,Colton Pricolo
+1281820,Weekly,May-27-2019 11:00:00 US/Pac,Task in progress,Elbon,E-05,416069,IN-PROGRESS-LATE,Colton Pricolo
+1281821,Weekly,May-27-2019 11:00:00 US/Pac,Task in progress,Elbon,E-03,416067,IN-PROGRESS-LATE,Colton Pricolo
+1281822,Weekly,May-27-2019 11:00:00 US/Pac,Task in progress,Delta Ranch,D-02,416000,IN-PROGRESS-LATE,Colton Pricolo
+1281823,Weekly,May-27-2019 11:00:00 US/Pac,Task in progress,Delta Ranch,D-05S,455869,IN-PROGRESS-LATE,Colton Pricolo
+1281824,Weekly,May-27-2019 11:00:00 US/Pac,Task in progress,Delta Ranch,D-26,416135,IN-PROGRESS-LATE,Colton Pricolo
+1281825,Weekly,May-27-2019 11:00:00 US/Pac,Task in progress,Delta Ranch,D-14,416062,IN-PROGRESS-LATE,Colton Pricolo
+1281826,Weekly,May-27-2019 11:00:00 US/Pac,Task in progress,Delta Ranch,D-17,416118,IN-PROGRESS-LATE,Colton Pricolo
+1281827,Weekly,May-27-2019 11:00:00 US/Pac,Task in progress,Delta Ranch,D-12,416132,IN-PROGRESS-LATE,Colton Pricolo
+1281828,Weekly,May-27-2019 11:00:00 US/Pac,Task in progress,Delta Ranch,D-11,416060,IN-PROGRESS-LATE,Colton Pricolo
+1281829,Weekly,May-27-2019 11:00:00 US/Pac,Task in progress,Delta Ranch,D-12,416132,IN-PROGRESS-LATE,Colton Pricolo
+1281879,Weekly,May-27-2019 11:00:00 US/Pac,Task in progress,Las Animas,L-21,416078,IN-PROGRESS-LATE,Wayne Pricolo
+1281882,Fungicide,May-27-2019 11:00:00 US/Pac,Task in progress,Delta Ranch,D-18 Block #1,432298,IN-PROGRESS-LATE,Wayne Pricolo
+1281882,Fungicide,May-27-2019 11:00:00 US/Pac,Task in progress,Delta Ranch,D-18 Block #2,435754,IN-PROGRESS-LATE,Wayne Pricolo
+1281882,Fungicide,May-27-2019 11:00:00 US/Pac,Task in progress,Delta Ranch,D-18 Block #3,432301,IN-PROGRESS-LATE,Wayne Pricolo
+1281882,Fungicide,May-27-2019 11:00:00 US/Pac,Task in progress,Delta Ranch,D-18 Block #4,435755,IN-PROGRESS-LATE,Wayne Pricolo
+1281882,Fungicide,May-27-2019 11:00:00 US/Pac,Task in progress,Delta Ranch,D-18 Block #5,432300,IN-PROGRESS-LATE,Wayne Pricolo
+1281882,Fungicide,May-27-2019 11:00:00 US/Pac,Task in progress,Delta Ranch,D-18 Block #6,435756,IN-PROGRESS-LATE,Wayne Pricolo
+1281882,Fungicide,May-27-2019 11:00:00 US/Pac,Task in progress,Delta Ranch,D-18 Block #7,432299,IN-PROGRESS-LATE,Wayne Pricolo
+1281882,Fungicide,May-27-2019 11:00:00 US/Pac,Task in progress,Delta Ranch,D-18 Block  #8,435757,IN-PROGRESS-LATE,Wayne Pricolo
+1281882,Fungicide,May-27-2019 11:00:00 US/Pac,Task in progress,Delta Ranch,D-19 Block #1,432289,IN-PROGRESS-LATE,Wayne Pricolo
+1281882,Fungicide,May-27-2019 11:00:00 US/Pac,Task in progress,Delta Ranch,D-19 Block #2,435759,IN-PROGRESS-LATE,Wayne Pricolo
+1281882,Fungicide,May-27-2019 11:00:00 US/Pac,Task in progress,Delta Ranch,D-19 Block #3,432290,IN-PROGRESS-LATE,Wayne Pricolo
+1281882,Fungicide,May-27-2019 11:00:00 US/Pac,Task in progress,Delta Ranch,D-19 Block #4,435760,IN-PROGRESS-LATE,Wayne Pricolo
+1281882,Fungicide,May-27-2019 11:00:00 US/Pac,Task in progress,Delta Ranch,D-19 Block #5,432291,IN-PROGRESS-LATE,Wayne Pricolo
+1281882,Fungicide,May-27-2019 11:00:00 US/Pac,Task in progress,Delta Ranch,D-19 Block #6,435761,IN-PROGRESS-LATE,Wayne Pricolo

@@ -13,12 +13,13 @@ from dateutil import tz							# for getting system timezone, other specific time
 
 def main():
 	# ---- THESE ARE THE ONLY VARIABLE VALUES ANY USER REALLY NEEDS TO CHANGE, EVERYTHING ELSE IS HANDLED WITH THIS INFORMATION AND DOESN'T NEED TO BE TOUCHED ---- #
-	fileOut = "things.csv"
-	geomsCSVfilename = "geoms.csv"
-	timezone = tz.gettz("US/Pacific") # for timestamp conversion to US/Pacific time (as Agworld returns -6:00 timezone, but Bowles farms are in the US/Pacific timezone)
-	apiKey = "wFdJRAHjwzylncYDdwrcKw"
+	fileOut = "all_activities.csv"
+	geomsCSVfilename = "farm_geoms_and_coloring.csv"
+	timezone = "US/Pacific" # for timestamp conversion to US/Pacific time (as Agworld returns -6:00 timezone, but Bowles farms are in the US/Pacific timezone)
+	apiKey = "YOUR_API_KEY_GOES_HERE"
 	# ---- END ---- #
 
+	timezone = tz.gettz(timezone)
 	counter = 1 # for counting pages/knowing which page to fetch from AgWorld, starting with page 1
 	print ("Getting page {0} of data, please wait...".format(counter))
 	response = web_get('https://us.agworld.co/user_api/v1/activities?api_token={0}&page[number]={1}&page[size]=100'.format(apiKey, counter), headers={"Content-Type":"application/vnd.api+json", "Accept":"application/vnd.api+json"}) # gets 100 item chunks at a time
@@ -111,7 +112,7 @@ def main():
 
 	# I was keeping track of the fields that are in progress to change the color of those specific fields in the map
 	# every other field not in any of these arrays are assumed complete and will be color green
-	fields_in_progress_good = set(fields_in_progress_good) # makes all of the values unique, removes duplicates
+	fields_in_progress_good = set(fields_in_progress_good) # makes all of the values unique i.e., removes duplicates
 	fields_in_progress_late = set(fields_in_progress_late)
 
 	print("Changing {0}, please wait...".format(geomsCSVfilename))
