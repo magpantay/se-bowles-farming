@@ -1,0 +1,500 @@
+Field Name,Task Status,# Tasks With Status,Percentage
+Deep Well W-01,Complete,14,87.5
+Deep Well W-01,In Progress,2,12.5
+Deep Well W-02,Complete,12,66.66
+Deep Well W-02,In Progress,6,33.33
+Delta Ranch D-01,Complete,20,76.92
+Delta Ranch D-01,In Progress,1,3.846
+Delta Ranch D-01,To Do,5,19.23
+Delta Ranch D-02,Complete,56,84.84
+Delta Ranch D-02,Discarded,3,4.545
+Delta Ranch D-02,In Progress,2,3.030
+Delta Ranch D-02,Partially Complete,2,3.030
+Delta Ranch D-02,To Do,3,4.545
+Delta Ranch D-03,Complete,19,79.16
+Delta Ranch D-03,Discarded,1,4.166
+Delta Ranch D-03,To Do,4,16.66
+Delta Ranch D-05N,Complete,12,75.0
+Delta Ranch D-05N,Discarded,3,18.75
+Delta Ranch D-05N,To Do,1,6.25
+Delta Ranch D-05S,Complete,45,88.23
+Delta Ranch D-05S,Discarded,3,5.882
+Delta Ranch D-05S,Partially Complete,2,3.921
+Delta Ranch D-05S,To Do,1,1.960
+Delta Ranch D-05,Complete,1,50.0
+Delta Ranch D-05,To Do,1,50.0
+Delta Ranch D-06,Complete,26,92.85
+Delta Ranch D-06,To Do,2,7.142
+Delta Ranch D-07,Complete,13,86.66
+Delta Ranch D-07,Discarded,1,6.666
+Delta Ranch D-07,To Do,1,6.666
+Delta Ranch D-08N,Complete,2,100.0
+Delta Ranch D-09E Block #1,Complete,19,95.0
+Delta Ranch D-09E Block #1,Discarded,1,5.0
+Delta Ranch D-09E Block #2,Complete,19,95.0
+Delta Ranch D-09E Block #2,Discarded,1,5.0
+Delta Ranch D-09W,Complete,20,95.23
+Delta Ranch D-09W,Discarded,1,4.761
+Delta Ranch D-10,Complete,24,92.30
+Delta Ranch D-10,To Do,2,7.692
+Delta Ranch D-11,Complete,50,87.71
+Delta Ranch D-11,Discarded,2,3.508
+Delta Ranch D-11,Partially Complete,1,1.754
+Delta Ranch D-11,To Do,4,7.017
+Delta Ranch D-12,Complete,53,94.64
+Delta Ranch D-12,To Do,3,5.357
+Delta Ranch D-13,Complete,10,76.92
+Delta Ranch D-13,In Progress,1,7.692
+Delta Ranch D-13,To Do,2,15.38
+Delta Ranch D-14,Complete,52,96.29
+Delta Ranch D-14,To Do,2,3.703
+Delta Ranch D-15,Complete,21,77.77
+Delta Ranch D-15,To Do,6,22.22
+Delta Ranch D-17,Complete,21,77.77
+Delta Ranch D-17,In Progress,1,3.703
+Delta Ranch D-17,To Do,5,18.51
+Delta Ranch D-18 Block  #8,Complete,18,64.28
+Delta Ranch D-18 Block  #8,In Progress,5,17.85
+Delta Ranch D-18 Block  #8,To Do,5,17.85
+Delta Ranch D-18 Block #10,Complete,17,68.0
+Delta Ranch D-18 Block #10,In Progress,4,16.0
+Delta Ranch D-18 Block #10,To Do,4,16.0
+Delta Ranch D-18 Block #11,Complete,14,63.63
+Delta Ranch D-18 Block #11,In Progress,4,18.18
+Delta Ranch D-18 Block #11,To Do,4,18.18
+Delta Ranch D-18 Block #12,Complete,10,55.55
+Delta Ranch D-18 Block #12,In Progress,4,22.22
+Delta Ranch D-18 Block #12,To Do,4,22.22
+Delta Ranch D-18 Block #1,Complete,33,70.21
+Delta Ranch D-18 Block #1,In Progress,7,14.89
+Delta Ranch D-18 Block #1,To Do,7,14.89
+Delta Ranch D-18 Block #2,Complete,32,71.11
+Delta Ranch D-18 Block #2,In Progress,6,13.33
+Delta Ranch D-18 Block #2,To Do,7,15.55
+Delta Ranch D-18 Block #3,Complete,32,71.11
+Delta Ranch D-18 Block #3,In Progress,6,13.33
+Delta Ranch D-18 Block #3,To Do,7,15.55
+Delta Ranch D-18 Block #4,Complete,28,75.67
+Delta Ranch D-18 Block #4,In Progress,4,10.81
+Delta Ranch D-18 Block #4,To Do,5,13.51
+Delta Ranch D-18 Block #5,Complete,27,72.97
+Delta Ranch D-18 Block #5,In Progress,5,13.51
+Delta Ranch D-18 Block #5,To Do,5,13.51
+Delta Ranch D-18 Block #6,Complete,22,68.75
+Delta Ranch D-18 Block #6,In Progress,5,15.62
+Delta Ranch D-18 Block #6,To Do,5,15.62
+Delta Ranch D-18 Block #7,Complete,24,68.57
+Delta Ranch D-18 Block #7,In Progress,6,17.14
+Delta Ranch D-18 Block #7,To Do,5,14.28
+Delta Ranch D-18 Block #9,Complete,16,66.66
+Delta Ranch D-18 Block #9,In Progress,4,16.66
+Delta Ranch D-18 Block #9,To Do,4,16.66
+Delta Ranch D-18,To Do,1,100.0
+Delta Ranch D-19 #08,To Do,1,100.0
+Delta Ranch D-19 #09,To Do,1,100.0
+Delta Ranch D-19 Block #10,Complete,20,71.42
+Delta Ranch D-19 Block #10,In Progress,4,14.28
+Delta Ranch D-19 Block #10,To Do,4,14.28
+Delta Ranch D-19 Block #11,Complete,7,46.66
+Delta Ranch D-19 Block #11,In Progress,4,26.66
+Delta Ranch D-19 Block #11,To Do,4,26.66
+Delta Ranch D-19 Block #1,Complete,33,70.21
+Delta Ranch D-19 Block #1,In Progress,7,14.89
+Delta Ranch D-19 Block #1,To Do,7,14.89
+Delta Ranch D-19 Block #2,Complete,32,71.11
+Delta Ranch D-19 Block #2,In Progress,6,13.33
+Delta Ranch D-19 Block #2,To Do,7,15.55
+Delta Ranch D-19 Block #3,Complete,31,72.09
+Delta Ranch D-19 Block #3,In Progress,6,13.95
+Delta Ranch D-19 Block #3,To Do,6,13.95
+Delta Ranch D-19 Block #4,Complete,28,73.68
+Delta Ranch D-19 Block #4,In Progress,5,13.15
+Delta Ranch D-19 Block #4,To Do,5,13.15
+Delta Ranch D-19 Block #5,Complete,26,72.22
+Delta Ranch D-19 Block #5,In Progress,5,13.88
+Delta Ranch D-19 Block #5,To Do,5,13.88
+Delta Ranch D-19 Block #6,Complete,21,65.62
+Delta Ranch D-19 Block #6,In Progress,6,18.75
+Delta Ranch D-19 Block #6,To Do,5,15.62
+Delta Ranch D-19 Block #7,Complete,17,65.38
+Delta Ranch D-19 Block #7,In Progress,5,19.23
+Delta Ranch D-19 Block #7,To Do,4,15.38
+Delta Ranch D-19 Block #8,Complete,16,66.66
+Delta Ranch D-19 Block #8,In Progress,4,16.66
+Delta Ranch D-19 Block #8,To Do,4,16.66
+Delta Ranch D-19 Block #9,Complete,16,66.66
+Delta Ranch D-19 Block #9,In Progress,4,16.66
+Delta Ranch D-19 Block #9,To Do,4,16.66
+Delta Ranch D-23,Complete,13,100.0
+Delta Ranch D-24,Complete,13,100.0
+Delta Ranch D-25N,Complete,1,100.0
+Delta Ranch D-26,Complete,44,88.0
+Delta Ranch D-26,Discarded,2,4.0
+Delta Ranch D-26,Partially Complete,2,4.0
+Delta Ranch D-26,To Do,2,4.0
+Delta Ranch D-27,Complete,4,66.66
+Delta Ranch D-27,In Progress,1,16.66
+Delta Ranch D-27,To Do,1,16.66
+Delta Ranch D-28,Complete,15,93.75
+Delta Ranch D-28,To Do,1,6.25
+Delta Ranch D-29,Complete,5,71.42
+Delta Ranch D-29,In Progress,1,14.28
+Delta Ranch D-29,To Do,1,14.28
+Elbon E-01 North,Complete,4,57.14
+Elbon E-01 North,Discarded,1,14.28
+Elbon E-01 North,Partially Complete,2,28.57
+Elbon E-01 South,Complete,4,66.66
+Elbon E-01 South,Discarded,1,16.66
+Elbon E-01 South,Partially Complete,1,16.66
+Elbon E-02,Complete,8,88.88
+Elbon E-02,To Do,1,11.11
+Elbon E-03,Complete,14,63.63
+Elbon E-03,Discarded,2,9.090
+Elbon E-03,In Progress,1,4.545
+Elbon E-03,Partially Complete,2,9.090
+Elbon E-03,To Do,3,13.63
+Elbon E-04,Complete,16,66.66
+Elbon E-04,Discarded,2,8.333
+Elbon E-04,In Progress,1,4.166
+Elbon E-04,Partially Complete,2,8.333
+Elbon E-04,To Do,3,12.5
+Elbon E-05,Complete,15,68.18
+Elbon E-05,Discarded,1,4.545
+Elbon E-05,In Progress,1,4.545
+Elbon E-05,Partially Complete,2,9.090
+Elbon E-05,To Do,3,13.63
+Elbon E-06,Complete,24,82.75
+Elbon E-06,Discarded,1,3.448
+Elbon E-06,To Do,4,13.79
+Elbon E-07,Complete,13,86.66
+Elbon E-07,Discarded,2,13.33
+Elbon E-08,Complete,16,72.72
+Elbon E-08,Discarded,1,4.545
+Elbon E-08,In Progress,2,9.090
+Elbon E-08,To Do,3,13.63
+Hereford H-01,Complete,6,75.0
+Hereford H-01,In Progress,1,12.5
+Hereford H-01,To Do,1,12.5
+Hereford H-02,Complete,8,80.0
+Hereford H-02,Discarded,1,10.0
+Hereford H-02,In Progress,1,10.0
+Hereford H-03,Complete,6,75.0
+Hereford H-03,In Progress,1,12.5
+Hereford H-03,To Do,1,12.5
+Hereford H-04,Complete,6,66.66
+Hereford H-04,In Progress,1,11.11
+Hereford H-04,To Do,2,22.22
+Hereford H-05,Complete,11,68.75
+Hereford H-05,In Progress,2,12.5
+Hereford H-05,To Do,3,18.75
+Hereford H-06,Complete,12,70.58
+Hereford H-06,Discarded,1,5.882
+Hereford H-06,In Progress,1,5.882
+Hereford H-06,To Do,3,17.64
+Hereford H-07,Complete,6,75.0
+Hereford H-07,In Progress,1,12.5
+Hereford H-07,To Do,1,12.5
+Hereford H-08,Complete,12,70.58
+Hereford H-08,In Progress,2,11.76
+Hereford H-08,To Do,3,17.64
+Hereford H-09,Complete,7,58.33
+Hereford H-09,In Progress,1,8.333
+Hereford H-09,To Do,4,33.33
+Hereford H-10,Complete,5,50.0
+Hereford H-10,In Progress,1,10.0
+Hereford H-10,To Do,4,40.0
+Hereford H-11,Complete,6,54.54
+Hereford H-11,In Progress,1,9.090
+Hereford H-11,To Do,4,36.36
+Hereford H-12,Complete,5,45.45
+Hereford H-12,In Progress,2,18.18
+Hereford H-12,To Do,4,36.36
+Hereford H-13,Complete,6,50.0
+Hereford H-13,In Progress,1,8.333
+Hereford H-13,To Do,5,41.66
+Hereford H-14,Complete,6,50.0
+Hereford H-14,In Progress,1,8.333
+Hereford H-14,To Do,5,41.66
+Hereford H-15,Complete,5,45.45
+Hereford H-15,In Progress,1,9.090
+Hereford H-15,To Do,5,45.45
+Hereford H-16 North,Complete,16,100.0
+Hereford H-16 South,Complete,10,100.0
+Hereford H-17,Complete,14,87.5
+Hereford H-17,To Do,2,12.5
+Hereford H-18,Complete,13,72.22
+Hereford H-18,Discarded,1,5.555
+Hereford H-18,In Progress,1,5.555
+Hereford H-18,To Do,3,16.66
+Hereford H-20 Field,Complete,5,100.0
+Hereford H-20 Test Plot,Complete,8,100.0
+Hereford H-22,Complete,4,57.14
+Hereford H-22,In Progress,1,14.28
+Hereford H-22,To Do,2,28.57
+Hereford H-23,Complete,18,81.81
+Hereford H-23,In Progress,2,9.090
+Hereford H-23,To Do,2,9.090
+Hereford H-24,Complete,17,77.27
+Hereford H-24,In Progress,2,9.090
+Hereford H-24,To Do,3,13.63
+Hereford H-25N,Complete,11,84.61
+Hereford H-25N,To Do,2,15.38
+Hereford H-25S,Complete,12,85.71
+Hereford H-25S,To Do,2,14.28
+Hereford H-27,Complete,8,72.72
+Hereford H-27,In Progress,1,9.090
+Hereford H-27,To Do,2,18.18
+Hereford H-28,Complete,6,66.66
+Hereford H-28,In Progress,1,11.11
+Hereford H-28,To Do,2,22.22
+Kreyenhagen K-02,Complete,20,83.33
+Kreyenhagen K-02,In Progress,2,8.333
+Kreyenhagen K-02,To Do,2,8.333
+Kreyenhagen K-03,Complete,24,82.75
+Kreyenhagen K-03,Discarded,2,6.896
+Kreyenhagen K-03,To Do,3,10.34
+Kreyenhagen K-04,Complete,18,85.71
+Kreyenhagen K-04,To Do,3,14.28
+Kreyenhagen K-05,Complete,24,77.41
+Kreyenhagen K-05,Discarded,2,6.451
+Kreyenhagen K-05,To Do,5,16.12
+Kreyenhagen K-06,Complete,49,85.96
+Kreyenhagen K-06,Discarded,2,3.508
+Kreyenhagen K-06,In Progress,2,3.508
+Kreyenhagen K-06,Partially Complete,2,3.508
+Kreyenhagen K-06,To Do,2,3.508
+Kreyenhagen K-07,Complete,23,79.31
+Kreyenhagen K-07,In Progress,1,3.448
+Kreyenhagen K-07,To Do,5,17.24
+Las Animas L-01,Complete,37,90.24
+Las Animas L-01,Discarded,2,4.878
+Las Animas L-01,To Do,2,4.878
+Las Animas L-02,Complete,36,92.30
+Las Animas L-02,Discarded,2,5.128
+Las Animas L-02,To Do,1,2.564
+Las Animas L-03,Complete,42,87.5
+Las Animas L-03,In Progress,2,4.166
+Las Animas L-03,To Do,4,8.333
+Las Animas L-04,Complete,39,88.63
+Las Animas L-04,Discarded,1,2.272
+Las Animas L-04,To Do,4,9.090
+Las Animas L-05,Complete,41,89.13
+Las Animas L-05,In Progress,2,4.347
+Las Animas L-05,To Do,3,6.521
+Las Animas L-06,Complete,34,87.17
+Las Animas L-06,In Progress,2,5.128
+Las Animas L-06,To Do,3,7.692
+Las Animas L-07E-Center,Complete,4,100.0
+Las Animas L-07E-North,Complete,22,100.0
+Las Animas L-07E-South,Complete,18,94.73
+Las Animas L-07E-South,In Progress,1,5.263
+Las Animas L-07EN Center,Complete,14,77.77
+Las Animas L-07EN Center,To Do,4,22.22
+Las Animas L-07W,Complete,15,93.75
+Las Animas L-07W,To Do,1,6.25
+Las Animas L-09,Complete,37,90.24
+Las Animas L-09,In Progress,1,2.439
+Las Animas L-09,To Do,3,7.317
+Las Animas L-10,Complete,9,100.0
+Las Animas L-11,Complete,39,95.12
+Las Animas L-11,To Do,2,4.878
+Las Animas L-20,Complete,12,85.71
+Las Animas L-20,In Progress,2,14.28
+Las Animas L-21,Complete,14,87.5
+Las Animas L-21,To Do,2,12.5
+Las Animas L-22,Complete,16,100.0
+Las Animas L-25,Complete,27,93.10
+Las Animas L-25,To Do,2,6.896
+Las Animas L-27,Complete,30,90.90
+Las Animas L-27,In Progress,1,3.030
+Las Animas L-27,To Do,2,6.060
+Las Animas L-30,Complete,13,81.25
+Las Animas L-30,In Progress,1,6.25
+Las Animas L-30,To Do,2,12.5
+Las Animas L-31,Complete,13,81.25
+Las Animas L-31,In Progress,1,6.25
+Las Animas L-31,To Do,2,12.5
+Las Animas L-32,Complete,19,100.0
+Las Animas L-33,Complete,16,84.21
+Las Animas L-33,In Progress,1,5.263
+Las Animas L-33,To Do,2,10.52
+Las Animas L-35,Complete,17,85.0
+Las Animas L-35,In Progress,1,5.0
+Las Animas L-35,To Do,2,10.0
+Las Animas L-36 North,Complete,8,100.0
+Las Animas L-36 South,Complete,8,88.88
+Las Animas L-36 South,To Do,1,11.11
+Las Animas L-37,Complete,14,100.0
+Lone Tree T-01,Complete,20,90.90
+Lone Tree T-01,In Progress,1,4.545
+Lone Tree T-01,To Do,1,4.545
+Lone Tree T-02,Complete,18,90.0
+Lone Tree T-02,In Progress,1,5.0
+Lone Tree T-02,To Do,1,5.0
+Lone Tree T-03,Complete,20,90.90
+Lone Tree T-03,In Progress,1,4.545
+Lone Tree T-03,To Do,1,4.545
+Lone Tree T-05,Complete,45,91.83
+Lone Tree T-05,In Progress,2,4.081
+Lone Tree T-05,To Do,2,4.081
+Lone Tree T-06,Complete,19,90.47
+Lone Tree T-06,In Progress,1,4.761
+Lone Tree T-06,To Do,1,4.761
+Lone Tree T-07,Complete,20,90.90
+Lone Tree T-07,In Progress,1,4.545
+Lone Tree T-07,To Do,1,4.545
+Lone Tree T-08,Complete,16,88.88
+Lone Tree T-08,In Progress,1,5.555
+Lone Tree T-08,To Do,1,5.555
+Lone Tree T-09,Complete,12,60.0
+Lone Tree T-09,Discarded,1,5.0
+Lone Tree T-09,In Progress,3,15.0
+Lone Tree T-09,To Do,4,20.0
+Lone Tree T-10 North,Complete,8,72.72
+Lone Tree T-10 North,Discarded,1,9.090
+Lone Tree T-10 North,Partially Complete,2,18.18
+Lone Tree T-10 South,Complete,8,72.72
+Lone Tree T-10 South,Discarded,1,9.090
+Lone Tree T-10 South,Partially Complete,1,9.090
+Lone Tree T-10 South,To Do,1,9.090
+Lone Tree T-11,Complete,13,81.25
+Lone Tree T-11,Discarded,1,6.25
+Lone Tree T-11,In Progress,1,6.25
+Lone Tree T-11,To Do,1,6.25
+Lone Tree T-12,Complete,20,90.90
+Lone Tree T-12,In Progress,1,4.545
+Lone Tree T-12,To Do,1,4.545
+Merced D-18,To Do,1,100.0
+Merced D-19,To Do,1,100.0
+Pick Anderson P-01E,Complete,16,80.0
+Pick Anderson P-01E,In Progress,2,10.0
+Pick Anderson P-01E,To Do,2,10.0
+Pick Anderson P-01W,Complete,15,78.94
+Pick Anderson P-01W,In Progress,2,10.52
+Pick Anderson P-01W,To Do,2,10.52
+Pick Anderson P-02,Complete,43,86.0
+Pick Anderson P-02,In Progress,2,4.0
+Pick Anderson P-02,Partially Complete,2,4.0
+Pick Anderson P-02,To Do,3,6.0
+Pick Anderson P-03,Complete,14,63.63
+Pick Anderson P-03,To Do,8,36.36
+Pick Anderson P-04,Complete,12,60.0
+Pick Anderson P-04,To Do,8,40.0
+Pick Anderson P-05,Complete,18,66.66
+Pick Anderson P-05,Discarded,1,3.703
+Pick Anderson P-05,To Do,8,29.62
+Pick Anderson P-06,Complete,15,65.21
+Pick Anderson P-06,To Do,8,34.78
+Pick Anderson P-07,Complete,14,63.63
+Pick Anderson P-07,To Do,8,36.36
+Pick Anderson P-08,Complete,14,93.33
+Pick Anderson P-08,To Do,1,6.666
+Pick Anderson P-09,Complete,13,81.25
+Pick Anderson P-09,In Progress,2,12.5
+Pick Anderson P-09,To Do,1,6.25
+Pick Anderson P-10,Complete,14,87.5
+Pick Anderson P-10,In Progress,1,6.25
+Pick Anderson P-10,To Do,1,6.25
+Pick Anderson P-11,Complete,6,100.0
+Pick Anderson P-12,Complete,30,83.33
+Pick Anderson P-12,To Do,6,16.66
+Pick Anderson P-13E,Complete,16,88.88
+Pick Anderson P-13E,To Do,2,11.11
+Pick Anderson P-13W,Complete,30,83.33
+Pick Anderson P-13W,In Progress,1,2.777
+Pick Anderson P-13W,To Do,5,13.88
+Pick Anderson P-14E,Complete,43,93.47
+Pick Anderson P-14E,In Progress,1,2.173
+Pick Anderson P-14E,To Do,2,4.347
+Pick Anderson P-14W,Complete,42,93.33
+Pick Anderson P-14W,In Progress,1,2.222
+Pick Anderson P-14W,To Do,2,4.444
+Pick Anderson P-15,Complete,34,94.44
+Pick Anderson P-15,Discarded,1,2.777
+Pick Anderson P-15,To Do,1,2.777
+Pick Anderson P-16E,Complete,36,90.0
+Pick Anderson P-16E,To Do,4,10.0
+Pick Anderson P-16W,Complete,43,87.75
+Pick Anderson P-16W,Discarded,2,4.081
+Pick Anderson P-16W,In Progress,1,2.040
+Pick Anderson P-16W,Partially Complete,2,4.081
+Pick Anderson P-16W,To Do,1,2.040
+Pick Anderson P-17,Complete,33,91.66
+Pick Anderson P-17,In Progress,2,5.555
+Pick Anderson P-17,To Do,1,2.777
+Pick Anderson P-18,Complete,45,90.0
+Pick Anderson P-18,Discarded,2,4.0
+Pick Anderson P-18,Partially Complete,2,4.0
+Pick Anderson P-18,To Do,1,2.0
+Pick Anderson P-19,Complete,38,86.36
+Pick Anderson P-19,In Progress,2,4.545
+Pick Anderson P-19,To Do,4,9.090
+Pick Anderson P-20,Complete,14,93.33
+Pick Anderson P-20,To Do,1,6.666
+Pick Anderson P-21,Complete,14,93.33
+Pick Anderson P-21,To Do,1,6.666
+Pick Anderson P-22,Complete,11,73.33
+Pick Anderson P-22,Discarded,1,6.666
+Pick Anderson P-22,In Progress,1,6.666
+Pick Anderson P-22,To Do,2,13.33
+Pick Anderson P-23,Complete,17,89.47
+Pick Anderson P-23,In Progress,1,5.263
+Pick Anderson P-23,To Do,1,5.263
+Pick Anderson P-24,Complete,17,94.44
+Pick Anderson P-24,To Do,1,5.555
+Pick Anderson P-25,Complete,15,83.33
+Pick Anderson P-25,In Progress,1,5.555
+Pick Anderson P-25,To Do,2,11.11
+Pick Anderson P-26,Complete,18,78.26
+Pick Anderson P-26,Discarded,1,4.347
+Pick Anderson P-26,In Progress,2,8.695
+Pick Anderson P-26,To Do,2,8.695
+Pick Anderson P-27,Complete,15,78.94
+Pick Anderson P-27,In Progress,2,10.52
+Pick Anderson P-27,To Do,2,10.52
+Pick Anderson P-29,Complete,7,100.0
+Pick Anderson P-31,Complete,13,86.66
+Pick Anderson P-31,In Progress,1,6.666
+Pick Anderson P-31,To Do,1,6.666
+Pick Anderson P-32,Complete,10,83.33
+Pick Anderson P-32,In Progress,1,8.333
+Pick Anderson P-32,To Do,1,8.333
+Pick Anderson P-34,Complete,11,78.57
+Pick Anderson P-34,In Progress,1,7.142
+Pick Anderson P-34,To Do,2,14.28
+Pick Anderson P-35,Complete,6,85.71
+Pick Anderson P-35,Discarded,1,14.28
+Pick Anderson P-36,Complete,7,87.5
+Pick Anderson P-36,Discarded,1,12.5
+Pick Anderson P-37,Complete,44,89.79
+Pick Anderson P-37,To Do,5,10.20
+Pick Anderson P-38,Complete,43,87.75
+Pick Anderson P-38,In Progress,2,4.081
+Pick Anderson P-38,To Do,4,8.163
+Pick Anderson P-39,Complete,5,100.0
+Pick Anderson P-40,Complete,28,82.35
+Pick Anderson P-40,Discarded,1,2.941
+Pick Anderson P-40,Partially Complete,1,2.941
+Pick Anderson P-40,To Do,4,11.76
+Pick Anderson P-41,Complete,29,82.85
+Pick Anderson P-41,Discarded,1,2.857
+Pick Anderson P-41,Partially Complete,1,2.857
+Pick Anderson P-41,To Do,4,11.42
+Pick Anderson P-42,Complete,42,84.0
+Pick Anderson P-42,In Progress,4,8.0
+Pick Anderson P-42,To Do,4,8.0
+Pick Anderson P-43,Complete,15,78.94
+Pick Anderson P-43,In Progress,2,10.52
+Pick Anderson P-43,To Do,2,10.52
+Pick Anderson P-44,Complete,16,80.0
+Pick Anderson P-44,Discarded,1,5.0
+Pick Anderson P-44,In Progress,1,5.0
+Pick Anderson P-44,To Do,2,10.0
+Pick Anderson P-45,Complete,11,100.0
+Pick Anderson P-46,Complete,13,81.25
+Pick Anderson P-46,In Progress,1,6.25
+Pick Anderson P-46,To Do,2,12.5
+Pick Anderson P-47,Complete,13,72.22
+Pick Anderson P-47,Discarded,1,5.555
+Pick Anderson P-47,In Progress,1,5.555
+Pick Anderson P-47,To Do,3,16.66

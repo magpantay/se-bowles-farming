@@ -1,0 +1,60 @@
+body, html
+{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background: white;
+
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+body
+{
+    font-family: 'Raleway', sans-serif;
+    color: black;
+}
+
+h1
+{
+	text-align: center;
+  text-decoration: underline;
+  margin-bottom: 0px;
+  margin-top:10px;
+}
+
+.taskList, .fieldStats
+{
+  text-align: center;
+  width: 100%;
+  border: 1px solid white;
+}
+
+.taskList a {
+  text-decoration: none;
+}
+
+.taskList_head, .fieldStats_head
+{
+  background-color: #c2c2c2;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2; /* makes zebra-striped table */
+}
+
+.no-js {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#referral {
+  font-size: 20px;
+  text-align: center;
+}
+
+#referral a {
+  text-decoration: none;
+}

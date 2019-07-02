@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+     <head>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <meta http-equiv="refresh" content="1200">
+          <!-- Refresh every 20 minutes, no JS needed! -->
+
+          <!-- Cheeky little nosy thing, aren't ya? -->
+          <link href="css/raleway_font.css" rel="stylesheet"></link>
+          <link href="css/index.css" rel="stylesheet" type="text/css"></link>
+          <link rel="stylesheet" type="text/css" href="css/dataTables.css"></link>
+          <script src="js/index.js"></script>
+          <script src="js/jquery-3.4.1.min.js"></script>
+          <!-- jQuery, dependency of DataTables -->
+          <script type="text/javascript" charset="utf8" src="js/jquery-dataTables.js"></script>
+          <!-- DataTables, for table sorting -->
+          <script src="js/papaparse.min.js"></script>
+          <!-- PapaParse, for CSV parsing -->
+
+          <link rel="icon" type="image/x-icon" href="favicon.ico">
+          <title>Bird's Eye: Bowles Farming Dashboard</title>
+     </head>
+
+     <body>
+          <noscript>
+               <p id='no-js' class='no-js'>Looks like your browser does not have JavaScript enabled! :(
+                    <br/>
+                    <br/>
+                    Please enable JavaScript to view this website.</p>
+          </noscript>
+
+          <iframe
+               width="100%"
+               height="520"
+               frameborder="0"
+               src="https://magpantay.carto.com/builder/df76d968-d382-40f6-9acb-036557ec5700/embed"
+               allowfullscreen="allowfullscreen"
+               webkitallowfullscreen="webkitallowfullscreen"
+               mozallowfullscreen="mozallowfullscreen"
+               oallowfullscreen="oallowfullscreen"
+               msallowfullscreen="msallowfullscreen"></iframe>
+
+          <script type="text/javascript">
+               var header = document.createElement("h1"); //needed to create it here in JS so it doesn't display if there isn't JS
+               header.innerHTML = "Task List";
+               document.body.appendChild(header);
+
+               var tableName = "taskList";
+               var csv_rows = new Array(); //no size arg means it's a dynamically sized array
+               // this array will hold arrays from the rows of the CSV files (basically array of arrays lol)
+
+               var counter = 0; //used for location to place new row in csv_rows array
+
+               Papa.parse("https://bfarms.github.io/csvs/all_activities.csv", {
+                    download: true,
+                    step: function (row) {
+                         //console.log("Row:", row.data);
+                         csv_rows[counter] = row.data[0]; //[0] because there's other pieces of metadata that PapaParse has as well (data[0] is the array itself)
+                         counter = counter + 1; //increment counter so that for placement of next row of items
+                    },
+                    complete: function () { //must do the rest of the functions here because this is asynchronous (the things outside of this function will complete most likely complete before this completes)
+                         console.log("All done parsing CSV file!");
+                         console.log(
+                              "We now have a " + csv_rows.length + " x " + csv_rows[0].length + " array (yes, this includes the first row [aka column names] of the CSV and, for some odd reason, an extra blank line at the end of the CSV (dw, I've offset values to account for thes" +
+                              "e))"
+                         );
+                         tableCreation(tableName, csv_rows.length); //create table with class name tab1 with the rows and columns (empty)
+                         populateTable(tableName, csv_rows); //adds text to the rows of the table
+                         addColorToTaskStatus(tableName); //adds color to task status portion of table
+
+                         var referral = document.createElement("p"); //needed to create it here in JS so it doesn't display if there isn't JS
+                         referral.setAttribute('id', 'referral');
+                         referral.innerHTML = "<a href='stats.html'>Go To Field Statistics</a>";
+                         document.body.appendChild(referral);
+
+                         $(document).ready(function () { //after the table has been created, we use DataTable to make the table searchable and sortable (we have to have our table in the conventional format first, then DataTables wraps its stuff around the table)
+                              $('#' + tableName).DataTable({
+                                   "order": [], //no order by default for the table
+                                   "pageLength": 100, //default number of rows in a page is 100
+                                   "lengthMenu": [
+                                        [
+                                             5,
+                                             10,
+                                             25,
+                                             50,
+                                             100,
+                                             500,
+                                             1000,
+                                             -1
+                                        ],
+                                        [
+                                             5,
+                                             10,
+                                             25,
+                                             50,
+                                             100,
+                                             500,
+                                             1000,
+                                             "All"
+                                        ]
+                                   ], //menu of selectable table row lengths
+                                   "stateSave": true //allows the saving of the table state (ex. sorting and filtering/searches, etc.) between refreshes, since the page refreshes every 20 minutes
+                              });
+                         });
+                    }
+               });
+          </script>
+
+     </body>
+
+</html>
